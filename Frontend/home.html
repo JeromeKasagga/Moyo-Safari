@@ -1,0 +1,837 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Eyalama Adventures</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#868381",
+                        "tertiary": "#000000",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#000000",
+                        "surface-variant": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#735c00",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-container": "#1c1b1b",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "tertiary-fixed": "#e6e1df",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#474646",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-primary": "#c9c6c5",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f1",
+                        "outline": "#747878",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-fixed": "#ffe088",
+                        "on-secondary-container": "#745c00",
+                        "surface-dim": "#dadada",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "on-surface-variant": "#444748",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "surface-container": "#eeeeee",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#e9c349",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1d1b1a",
+                        "surface-tint": "#5f5e5e",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "section-gap-mobile": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "display-lg-mobile": ["Manrope"],
+                        "label-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style data-stitch-css-vh="
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  ">
+    body {
+      min-height: max(884px, 1024px);
+    }
+  </style>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{-webkit-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0px;padding-top:0.5rem;padding-right:0.75rem;padding-bottom:0.5rem;padding-left:0.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000;}[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);border-color:#2563eb}input::placeholder,textarea::placeholder{color:#6b7280;opacity:1}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-date-and-time-value{min-height:1.5em;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-top:0;padding-bottom:0}select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;print-color-adjust:exact}[multiple],[size]:where(select:not([size="1"])){background-image:initial;background-position:initial;background-repeat:unset;background-size:initial;padding-right:0.75rem;print-color-adjust:unset}[type='checkbox'],[type='radio']{-webkit-appearance:none;appearance:none;padding:0;print-color-adjust:exact;display:inline-block;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;user-select:none;flex-shrink:0;height:1rem;width:1rem;color:#2563eb;background-color:#fff;border-color:#6b7280;border-width:1px;--tw-shadow:0 0 #0000}[type='checkbox']{border-radius:0px}[type='radio']{border-radius:100%}[type='checkbox']:focus,[type='radio']:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:2px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}[type='checkbox']:checked,[type='radio']:checked{border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat}[type='checkbox']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='checkbox']:checked{-webkit-appearance:auto;appearance:auto}}[type='radio']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='radio']:checked{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{border-color:transparent;background-color:currentColor}[type='checkbox']:indeterminate{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat;}@media (forced-colors: active) {[type='checkbox']:indeterminate{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus{border-color:transparent;background-color:currentColor}[type='file']{background:unset;border-color:inherit;border-width:0;border-radius:0;padding:0;font-size:unset;line-height:inherit}[type='file']:focus{outline:1px solid ButtonText;outline:1px auto -webkit-focus-ring-color}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-y-0{top:0px;bottom:0px}.-bottom-4{bottom:-1rem}.bottom-0{bottom:0px}.bottom-6{bottom:1.5rem}.left-0{left:0px}.left-4{left:1rem}.left-6{left:1.5rem}.right-0{right:0px}.right-4{right:1rem}.right-6{right:1.5rem}.top-0{top:0px}.top-4{top:1rem}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.z-\[60\]{z-index:60}.-mx-margin-mobile{margin-left:-20px;margin-right:-20px}.mx-2{margin-left:0.5rem;margin-right:0.5rem}.mx-auto{margin-left:auto;margin-right:auto}.-mt-24{margin-top:-6rem}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-section-gap-mobile{margin-bottom:64px}.mt-1{margin-top:0.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-\[180px\]{height:180px}.h-\[220px\]{height:220px}.h-\[240px\]{height:240px}.h-\[300px\]{height:300px}.h-\[400px\]{height:400px}.h-\[884px\]{height:884px}.h-full{height:100%}.min-h-\[600px\]{min-height:600px}.w-80{width:20rem}.w-\[75vw\]{width:75vw}.w-\[85vw\]{width:85vw}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-container-max{max-width:1280px}.flex-1{flex:1 1 0%}.flex-none{flex:none}.translate-x-full{--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-95{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.snap-x{scroll-snap-type:x var(--tw-scroll-snap-strictness)}.snap-mandatory{--tw-scroll-snap-strictness:mandatory}.snap-start{scroll-snap-align:start}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-nowrap{flex-wrap:nowrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-x-hidden{overflow-x:hidden}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[24px\]{border-radius:24px}.rounded-\[32px\]{border-radius:32px}.rounded-\[40px\]{border-radius:40px}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-on-tertiary-container\/20{border-color:rgb(134 131 129 / 0.2)}.border-on-tertiary-container\/30{border-color:rgb(134 131 129 / 0.3)}.border-on-tertiary-container\/50{border-color:rgb(134 131 129 / 0.5)}.border-outline-variant{--tw-border-opacity:1;border-color:rgb(196 199 199 / var(--tw-border-opacity, 1))}.border-outline-variant\/10{border-color:rgb(196 199 199 / 0.1)}.border-outline-variant\/20{border-color:rgb(196 199 199 / 0.2)}.border-outline-variant\/30{border-color:rgb(196 199 199 / 0.3)}.border-outline-variant\/5{border-color:rgb(196 199 199 / 0.05)}.border-primary{--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity, 1))}.bg-black\/30{background-color:rgb(0 0 0 / 0.3)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-primary\/80{background-color:rgb(0 0 0 / 0.8)}.bg-secondary-container{--tw-bg-opacity:1;background-color:rgb(254 214 91 / var(--tw-bg-opacity, 1))}.bg-surface{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(238 238 238 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(243 243 243 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest\/80{background-color:rgb(255 255 255 / 0.8)}.bg-surface-container-lowest\/90{background-color:rgb(255 255 255 / 0.9)}.bg-tertiary{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-tertiary-container{--tw-bg-opacity:1;background-color:rgb(29 27 26 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-black\/60{--tw-gradient-from:rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.bg-cover{background-size:cover}.bg-center{background-position:center}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.px-margin-mobile{padding-left:20px;padding-right:20px}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-section-gap{padding-top:120px;padding-bottom:120px}.py-section-gap-mobile{padding-top:64px;padding-bottom:64px}.pb-1{padding-bottom:0.25rem}.pb-32{padding-bottom:8rem}.pb-4{padding-bottom:1rem}.pb-8{padding-bottom:2rem}.pr-margin-mobile{padding-right:20px}.pt-24{padding-top:6rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-body-lg{font-family:Manrope}.font-body-md{font-family:Manrope}.font-display-lg-mobile{font-family:Manrope}.font-headline-lg{font-family:Manrope}.font-headline-md{font-family:Manrope}.font-label-lg{font-family:Manrope}.font-label-sm{font-family:Manrope}.text-\[10px\]{font-size:10px}.text-\[14px\]{font-size:14px}.text-\[16px\]{font-size:16px}.text-\[18px\]{font-size:18px}.text-\[20px\]{font-size:20px}.text-\[32px\]{font-size:32px}.text-headline-md{font-size:24px;line-height:1.4;font-weight:700}.text-label-lg{font-size:14px;line-height:1;letter-spacing:0.05em;font-weight:600}.text-label-sm{font-size:12px;line-height:1;font-weight:500}.font-bold{font-weight:700}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-on-primary{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-on-secondary-container{--tw-text-opacity:1;color:rgb(116 92 0 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(26 28 28 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(68 71 72 / var(--tw-text-opacity, 1))}.text-on-tertiary{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-on-tertiary-container{--tw-text-opacity:1;color:rgb(134 131 129 / var(--tw-text-opacity, 1))}.text-outline{--tw-text-opacity:1;color:rgb(116 120 120 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-secondary-container{--tw-text-opacity:1;color:rgb(254 214 91 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-60{opacity:0.6}.opacity-80{opacity:0.8}.opacity-90{opacity:0.9}.mix-blend-multiply{mix-blend-mode:multiply}.shadow-\[0_12px_32px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0 12px 32px rgba(0,0,0,0.08);--tw-shadow-colored:0 12px 32px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-sm{--tw-drop-shadow:drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-lg{--tw-backdrop-blur:blur(16px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.hover\:-translate-y-1:hover{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity, 1))}.hover\:bg-\[\#ebd04e\]:hover{--tw-bg-opacity:1;background-color:rgb(235 208 78 / var(--tw-bg-opacity, 1))}.hover\:bg-on-tertiary:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container:hover{--tw-bg-opacity:1;background-color:rgb(238 238 238 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(232 232 232 / var(--tw-bg-opacity, 1))}.hover\:text-error:hover{--tw-text-opacity:1;color:rgb(186 26 26 / var(--tw-text-opacity, 1))}.hover\:text-on-tertiary:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:text-tertiary:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:opacity-80:hover{opacity:0.8}.hover\:opacity-90:hover{opacity:0.9}.hover\:grayscale-0:hover{--tw-grayscale:grayscale(0);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.active\:scale-90:active{--tw-scale-x:.9;--tw-scale-y:.9;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-primary{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-on-primary{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-primary{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-90{opacity:0.9}.dark\:bg-tertiary-container:is(.dark *){--tw-bg-opacity:1;background-color:rgb(29 27 26 / var(--tw-bg-opacity, 1))}.dark\:text-on-tertiary-container:is(.dark *){--tw-text-opacity:1;color:rgb(134 131 129 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:col-span-1{grid-column:span 1 / span 1}.md\:mx-0{margin-left:0px;margin-right:0px}.md\:mb-section-gap{margin-bottom:120px}.md\:block{display:block}.md\:flex{display:flex}.md\:grid{display:grid}.md\:hidden{display:none}.md\:h-auto{height:auto}.md\:w-1\/2{width:50%}.md\:w-\[380px\]{width:380px}.md\:w-\[400px\]{width:400px}.md\:w-auto{width:auto}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}.md\:justify-center{justify-content:center}.md\:self-end{align-self:flex-end}.md\:p-16{padding:4rem}.md\:p-8{padding:2rem}.md\:px-0{padding-left:0px;padding-right:0px}.md\:px-gutter{padding-left:24px;padding-right:24px}.md\:py-section-gap{padding-top:120px;padding-bottom:120px}.md\:pr-0{padding-right:0px}.md\:pr-4{padding-right:1rem}.md\:pr-6{padding-right:1.5rem}.md\:text-left{text-align:left}.md\:font-display-lg{font-family:Manrope}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{-webkit-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0px;padding-top:0.5rem;padding-right:0.75rem;padding-bottom:0.5rem;padding-left:0.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000;}[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);border-color:#2563eb}input::placeholder,textarea::placeholder{color:#6b7280;opacity:1}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-date-and-time-value{min-height:1.5em;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-top:0;padding-bottom:0}select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;print-color-adjust:exact}[multiple],[size]:where(select:not([size="1"])){background-image:initial;background-position:initial;background-repeat:unset;background-size:initial;padding-right:0.75rem;print-color-adjust:unset}[type='checkbox'],[type='radio']{-webkit-appearance:none;appearance:none;padding:0;print-color-adjust:exact;display:inline-block;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;user-select:none;flex-shrink:0;height:1rem;width:1rem;color:#2563eb;background-color:#fff;border-color:#6b7280;border-width:1px;--tw-shadow:0 0 #0000}[type='checkbox']{border-radius:0px}[type='radio']{border-radius:100%}[type='checkbox']:focus,[type='radio']:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:2px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}[type='checkbox']:checked,[type='radio']:checked{border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat}[type='checkbox']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='checkbox']:checked{-webkit-appearance:auto;appearance:auto}}[type='radio']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='radio']:checked{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{border-color:transparent;background-color:currentColor}[type='checkbox']:indeterminate{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat;}@media (forced-colors: active) {[type='checkbox']:indeterminate{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus{border-color:transparent;background-color:currentColor}[type='file']{background:unset;border-color:inherit;border-width:0;border-radius:0;padding:0;font-size:unset;line-height:inherit}[type='file']:focus{outline:1px solid ButtonText;outline:1px auto -webkit-focus-ring-color}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-y-0{top:0px;bottom:0px}.-bottom-4{bottom:-1rem}.bottom-0{bottom:0px}.bottom-6{bottom:1.5rem}.left-0{left:0px}.left-4{left:1rem}.left-6{left:1.5rem}.right-0{right:0px}.right-4{right:1rem}.right-6{right:1.5rem}.top-0{top:0px}.top-4{top:1rem}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.z-\[60\]{z-index:60}.-mx-margin-mobile{margin-left:-20px;margin-right:-20px}.mx-2{margin-left:0.5rem;margin-right:0.5rem}.mx-auto{margin-left:auto;margin-right:auto}.-mt-24{margin-top:-6rem}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-section-gap-mobile{margin-bottom:64px}.mt-1{margin-top:0.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-\[180px\]{height:180px}.h-\[220px\]{height:220px}.h-\[240px\]{height:240px}.h-\[300px\]{height:300px}.h-\[400px\]{height:400px}.h-\[884px\]{height:884px}.h-full{height:100%}.min-h-\[600px\]{min-height:600px}.w-80{width:20rem}.w-\[75vw\]{width:75vw}.w-\[85vw\]{width:85vw}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-container-max{max-width:1280px}.flex-1{flex:1 1 0%}.flex-none{flex:none}.translate-x-full{--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-95{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.snap-x{scroll-snap-type:x var(--tw-scroll-snap-strictness)}.snap-mandatory{--tw-scroll-snap-strictness:mandatory}.snap-start{scroll-snap-align:start}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-nowrap{flex-wrap:nowrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-x-hidden{overflow-x:hidden}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[24px\]{border-radius:24px}.rounded-\[32px\]{border-radius:32px}.rounded-\[40px\]{border-radius:40px}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-on-tertiary-container\/20{border-color:rgb(134 131 129 / 0.2)}.border-on-tertiary-container\/30{border-color:rgb(134 131 129 / 0.3)}.border-on-tertiary-container\/50{border-color:rgb(134 131 129 / 0.5)}.border-outline-variant{--tw-border-opacity:1;border-color:rgb(196 199 199 / var(--tw-border-opacity, 1))}.border-outline-variant\/10{border-color:rgb(196 199 199 / 0.1)}.border-outline-variant\/20{border-color:rgb(196 199 199 / 0.2)}.border-outline-variant\/30{border-color:rgb(196 199 199 / 0.3)}.border-outline-variant\/5{border-color:rgb(196 199 199 / 0.05)}.border-primary{--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity, 1))}.bg-black\/30{background-color:rgb(0 0 0 / 0.3)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-primary\/80{background-color:rgb(0 0 0 / 0.8)}.bg-secondary-container{--tw-bg-opacity:1;background-color:rgb(254 214 91 / var(--tw-bg-opacity, 1))}.bg-surface{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(238 238 238 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(243 243 243 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest\/80{background-color:rgb(255 255 255 / 0.8)}.bg-surface-container-lowest\/90{background-color:rgb(255 255 255 / 0.9)}.bg-tertiary{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-tertiary-container{--tw-bg-opacity:1;background-color:rgb(29 27 26 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-black\/60{--tw-gradient-from:rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.bg-cover{background-size:cover}.bg-center{background-position:center}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.px-margin-mobile{padding-left:20px;padding-right:20px}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-section-gap{padding-top:120px;padding-bottom:120px}.py-section-gap-mobile{padding-top:64px;padding-bottom:64px}.pb-1{padding-bottom:0.25rem}.pb-32{padding-bottom:8rem}.pb-4{padding-bottom:1rem}.pb-8{padding-bottom:2rem}.pr-margin-mobile{padding-right:20px}.pt-24{padding-top:6rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-body-lg{font-family:Manrope}.font-body-md{font-family:Manrope}.font-display-lg-mobile{font-family:Manrope}.font-headline-lg{font-family:Manrope}.font-headline-md{font-family:Manrope}.font-label-lg{font-family:Manrope}.font-label-sm{font-family:Manrope}.text-\[10px\]{font-size:10px}.text-\[14px\]{font-size:14px}.text-\[16px\]{font-size:16px}.text-\[18px\]{font-size:18px}.text-\[20px\]{font-size:20px}.text-\[32px\]{font-size:32px}.text-headline-md{font-size:24px;line-height:1.4;font-weight:700}.text-label-lg{font-size:14px;line-height:1;letter-spacing:0.05em;font-weight:600}.text-label-sm{font-size:12px;line-height:1;font-weight:500}.font-bold{font-weight:700}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-on-primary{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-on-secondary-container{--tw-text-opacity:1;color:rgb(116 92 0 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(26 28 28 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(68 71 72 / var(--tw-text-opacity, 1))}.text-on-tertiary{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-on-tertiary-container{--tw-text-opacity:1;color:rgb(134 131 129 / var(--tw-text-opacity, 1))}.text-outline{--tw-text-opacity:1;color:rgb(116 120 120 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-secondary-container{--tw-text-opacity:1;color:rgb(254 214 91 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-60{opacity:0.6}.opacity-80{opacity:0.8}.opacity-90{opacity:0.9}.mix-blend-multiply{mix-blend-mode:multiply}.shadow-\[0_12px_32px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0 12px 32px rgba(0,0,0,0.08);--tw-shadow-colored:0 12px 32px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-sm{--tw-drop-shadow:drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-lg{--tw-backdrop-blur:blur(16px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.hover\:-translate-y-1:hover{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity, 1))}.hover\:bg-\[\#ebd04e\]:hover{--tw-bg-opacity:1;background-color:rgb(235 208 78 / var(--tw-bg-opacity, 1))}.hover\:bg-on-tertiary:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container:hover{--tw-bg-opacity:1;background-color:rgb(238 238 238 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(232 232 232 / var(--tw-bg-opacity, 1))}.hover\:text-error:hover{--tw-text-opacity:1;color:rgb(186 26 26 / var(--tw-text-opacity, 1))}.hover\:text-on-tertiary:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:text-tertiary:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:opacity-80:hover{opacity:0.8}.hover\:opacity-90:hover{opacity:0.9}.hover\:grayscale-0:hover{--tw-grayscale:grayscale(0);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.active\:scale-90:active{--tw-scale-x:.9;--tw-scale-y:.9;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-primary{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-on-primary{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-primary{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-90{opacity:0.9}.dark\:bg-tertiary-container:is(.dark *){--tw-bg-opacity:1;background-color:rgb(29 27 26 / var(--tw-bg-opacity, 1))}.dark\:text-on-tertiary-container:is(.dark *){--tw-text-opacity:1;color:rgb(134 131 129 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:col-span-1{grid-column:span 1 / span 1}.md\:mx-0{margin-left:0px;margin-right:0px}.md\:mb-section-gap{margin-bottom:120px}.md\:block{display:block}.md\:flex{display:flex}.md\:grid{display:grid}.md\:hidden{display:none}.md\:h-auto{height:auto}.md\:w-1\/2{width:50%}.md\:w-\[380px\]{width:380px}.md\:w-\[400px\]{width:400px}.md\:w-auto{width:auto}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}.md\:justify-center{justify-content:center}.md\:self-end{align-self:flex-end}.md\:p-16{padding:4rem}.md\:p-8{padding:2rem}.md\:px-0{padding-left:0px;padding-right:0px}.md\:px-gutter{padding-left:24px;padding-right:24px}.md\:py-section-gap{padding-top:120px;padding-bottom:120px}.md\:pr-0{padding-right:0px}.md\:pr-4{padding-right:1rem}.md\:pr-6{padding-right:1.5rem}.md\:text-left{text-align:left}.md\:font-display-lg{font-family:Manrope}}</style></head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden" data-mode="connect">
+<!-- Navigation Drawer (Mobile Only, hidden by default, purely for structural completeness based on JSON) -->
+<div class="fixed inset-y-0 right-0 w-80 z-[60] shadow-xl bg-surface transform translate-x-full transition-transform duration-300 md:hidden flex flex-col h-full py-6" id="nav-drawer">
+<div class="px-6 mb-8 flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-primary">Eyalama Adventures</h2>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full" id="close-drawer">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-4 px-6 py-3 bg-secondary-container text-on-secondary-container rounded-xl mx-2 font-label-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl mx-2 font-label-lg transition-colors" href="#">
+<span class="material-symbols-outlined">travel_explore</span>
+                Packages
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl mx-2 font-label-lg transition-colors" href="#">
+<span class="material-symbols-outlined">nature_people</span>
+                Safari
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl mx-2 font-label-lg transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+                Destinations
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl mx-2 font-label-lg transition-colors" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+                Rentals
+            </a>
+</nav>
+</div>
+<!-- 1. HERO SECTION -->
+<header class="relative w-full h-[884px] min-h-[600px] flex flex-col">
+<!-- TopAppBar -->
+<div class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-outline-variant/20 transition-all duration-300 bg-surface-container-lowest/90 shadow-sm" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto">
+<!-- Hamburger (Mobile) -->
+<button class="md:hidden p-2 text-primary hover:opacity-80 transition-opacity duration-200" id="open-drawer">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Logo -->
+<a class="font-headline-md text-headline-md font-bold text-primary flex-1 text-center md:text-left" href="#">Eyalama Adventures</a>
+<!-- Desktop Nav Cluster -->
+<nav class="hidden md:flex items-center gap-8 bg-surface-container-lowest/80 backdrop-blur-lg px-8 py-3 rounded-full border border-outline-variant/30 shadow-sm">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Packages</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Safari</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Destinations</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Rentals</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex-1 flex justify-end hidden md:flex">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-lg hover:opacity-80 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">Contact Us</button>
+</div>
+</div>
+</div>
+<!-- Hero Background & Content -->
+<div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="A breathtaking panoramic view of an East African landscape at sunrise. The scene features lush green rolling hills leading down to a wide, calm river. In the distance, a modern suspension bridge spans the water, connecting a vibrant local settlement. The sky is clear blue with soft morning light illuminating the scene, creating an adventurous, high-end travel aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSoH3VOQpaQkUwnAcbH-wee6FU9ucmtvszDfCaPTZTqkbIlmj_5DQ9vldmEPFjMWKAJEUaDE0F22_ojohRQSXWuLvuJYNe4ugRt8DFSZH5hhvB4CtXWCIpnQN79QoJIJ3w1naAj6oYI9285d63xnV81G5bOsAtDMmaXctlIsg-ID1e1ienj0aAANak4dYly0Gy6XVyxtUgm1Byd7K3343BzX8e6HnZwtBbHjGNEUWOHgtLiiVGjOfIJXLirtoNBYJaE0ViVPnEvKLy');">
+<!-- Overlay for text readability -->
+<div class="absolute inset-0 bg-black/30"></div>
+</div>
+<div class="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-margin-mobile pt-24 pb-32">
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full font-label-lg mb-6 shadow-sm border border-outline-variant/20 inline-flex items-center gap-2">
+                Travel more, worry less
+            </span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-on-primary max-w-4xl mx-auto drop-shadow-md">
+                Explore with Us, one Journey at a time
+            </h1>
+<p class="font-body-lg text-on-primary mt-6 max-w-2xl mx-auto drop-shadow-sm opacity-90 hidden md:block">
+                Eyalama tours and travel offers personalized and hustle free travel experiences, tailored to meet ur unique preferences and needs.
+            </p>
+</div>
+</header>
+<!-- 2. FLOATING SEARCH -->
+<section class="relative z-20 -mt-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto mb-section-gap-mobile md:mb-section-gap">
+<div class="bg-surface-container-lowest rounded-3xl shadow-[0_12px_32px_rgba(0,0,0,0.08)] p-6 md:p-8 border border-outline-variant/10">
+<div class="mb-6 border-b border-outline-variant/20 pb-4 flex gap-6 overflow-x-auto hide-scrollbar">
+<button class="font-label-lg bg-primary text-on-primary px-6 py-2 rounded-full whitespace-nowrap">Tours</button>
+<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Packages</button>
+<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Tickets</button>
+<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Rental</button>
+<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Activities</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
+<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Destination</label>
+<div class="flex justify-between items-center">
+<span class="font-label-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">location_on</span>
+                            Where to?
+                        </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+</div>
+</div>
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
+<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Tour package</label>
+<div class="flex justify-between items-center">
+<span class="font-label-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">tour</span>
+                            Any
+                        </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+</div>
+</div>
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
+<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Duration</label>
+<div class="flex justify-between items-center">
+<span class="font-label-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">calendar_month</span>
+                            Any Dates
+                        </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+</div>
+</div>
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
+<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Guest</label>
+<div class="flex justify-between items-center">
+<span class="font-label-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">group</span>
+                            2 adults, 0 children
+                        </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="w-full md:w-auto bg-primary text-on-primary px-8 py-4 rounded-full font-label-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[20px]">search</span>
+                    Search
+                </button>
+</div>
+</div>
+</section>
+<!-- 3. FEATURED TOURS -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg md:font-display-lg text-primary mb-2">Our Featured Tours</h2>
+<p class="font-body-md text-on-surface-variant">Favorite destinations based on customer reviews</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="p-3 border border-outline-variant rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<button class="p-3 border border-outline-variant rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<div class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Card 1 -->
+<div class="snap-start flex-none w-[85vw] md:w-[400px] bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-[240px] overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> Top Rated
+                    </div>
+<img alt="Scenic coast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious coastal resort view from a private wooden deck at sunset. A white canopy cabana sits next to a pristine infinity pool overlooking the ocean. The lighting is warm and golden, reflecting a premium, relaxing vacation aesthetic typical of a high-end honeymoon destination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRDdyxhk7YGZ903JIa-GGH6Rbw4kTh9UM4yfh4-BOiJXNNN1ev07HZiId8c7wZ380cawL1diLR5w02_sHh_9anaHbUUSrw4pqhA-epGGEh8pArYf3ELBObJ_wMwKCNSFyk0WMiMamoneI0kvPMO_sRGocaT9-jSOvV8Gtb2xUTcdw8ofYRwr00TkW6PqCprDbu9UsahwReQBK7okHZlTd3Bx1ABOM22qZSjZAizncK3rXrn0gGWvhRt5w76LJnw5BYTjxpd8ntNAiF">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-primary mb-3 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
+<div class="flex gap-4 mb-6 mt-auto">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2 days 3 nights
+                        </span>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">group</span> 4-6 guest
+                        </span>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
+<div>
+<span class="font-headline-md text-primary">$48.25</span>
+<span class="font-label-sm text-on-surface-variant">/ couple</span>
+</div>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-start flex-none w-[85vw] md:w-[400px] bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-[240px] overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-surface-container-lowest text-primary px-3 py-1 rounded-full font-label-sm shadow-sm border border-outline-variant/10">
+                        Best Sale
+                    </div>
+<img alt="City view" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant daytime view of a historic European city riverfront. Grand architecture lines the wide river, with boats gently cruising on the water. The sky is bright blue with scattered clouds, creating a lively, culturally rich atmosphere suitable for a premium city tour package." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMCvAptZqvcMKEz2SWZ1MqEJ2b086aCuaKpnJiuedH6-8y2vxzMBv380aSxpmV90HVy3hQRK1u3gE-lYjqmHqxnXFk4RIbtvl4bqStcP26n6chAJn-ojl1PZDbmltpdKBw2zoU-jWwrchl7Kh1yz8cwYCZHQNZT40wE7tDwiiiXRaoGcfi_qxdJyiK1pL37YQ8RCtQDbv73Q4nRpRVwxWDH4IjIHVnSXzapfvCMzv38WHy239NeEoKzx5fJy4dbu-ALhGfjrRjhj4">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-primary mb-3 line-clamp-2">NYC: Food Tastings and Culture Tour</h3>
+<div class="flex gap-4 mb-6 mt-auto">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 3 days 3 nights
+                        </span>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">group</span> 4-6 guest
+                        </span>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
+<div>
+<span class="font-headline-md text-primary">$17.32</span>
+<span class="font-label-sm text-on-surface-variant">/ person</span>
+</div>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="snap-start flex-none w-[85vw] md:w-[400px] bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300 pr-margin-mobile md:pr-0">
+<div class="relative h-[240px] overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> Top Rated
+                    </div>
+<img alt="Resort pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious tropical resort pool area surrounded by lush palm trees and elegant white architecture. Crystal clear blue water reflects the bright sunshine. Lounge chairs are neatly arranged, inviting relaxation. The overall mood is high-end, serene, and perfect for a premium getaway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqbTUyK4Wji0swSiGz6ubuEWQlIF-i_Xz_G_fUwOW22rXzRNujtbF42uwNFNaWOHCNfvvyU10NazdeInMN1UfgOEquFBfNm3tRJy7bY3R44GheFWDU4PGsHcss_i7pJeu9hgiyFS6gfK5hWzy8B2lezKodnqkYeU75OjoQAhKIchf7nrinvklxw1_vfIF8Qf22RHLE3FK7jNdW99JxylsNqC7zTWXbIy6eO3nSSss2mLmR9foXJbwY-2gdwgHw_L-m2rzaJvuUHDd4">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-primary mb-3 line-clamp-2">Grand Canyon Horseshoe Bend 2 days</h3>
+<div class="flex gap-4 mb-6 mt-auto">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 7 days 6 nights
+                        </span>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">group</span> 4-6 guest
+                        </span>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
+<div>
+<span class="font-headline-md text-primary">$15.63</span>
+<span class="font-label-sm text-on-surface-variant">/ person</span>
+</div>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. ABOUT EYALAMA -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
+<div class="bg-surface-container-low rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-sm border border-outline-variant/10">
+<div class="p-8 md:p-16 md:w-1/2 flex flex-col justify-center">
+<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-6 uppercase tracking-tight">EYALAMA ADVENTURES</h2>
+<p class="font-body-md text-on-surface-variant mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+<p class="font-body-md text-on-surface-variant mb-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+<div>
+<button class="bg-secondary-container text-on-secondary-container hover:bg-[#ebd04e] px-8 py-4 rounded-full font-label-lg font-bold transition-colors">
+                        More About Eyalama
+                    </button>
+</div>
+</div>
+<div class="md:w-1/2 h-[300px] md:h-auto">
+<img alt="Resort pool area" class="w-full h-full object-cover" data-alt="A vibrant view of a high-end resort pool area featuring a blue water slide nestled among tropical palm trees. The bright blue water contrasts beautifully with the lush greenery and modern white architecture in the background. The lighting is sunny and cheerful, conveying a fun, premium holiday experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX8QT2QTPNYkblJq57yPL6IHteXzISiiFrm_kr4rolJmJTpvNkMe2mFuqlM6eIlbqUAbaDdOgVvYdvoFcFteEsF2gwVEjzu6ketE9lLhEpK4AWbZV839pMO--ldoGT7aIEUuuaxPIulW3YVHLe3Pg6AO0DZfOoa8gMKSF41JzNM0Ty7UM9JWRwGdVRIQcEPuS_vi2UZhZwhGNj4-33B0T3Gq40ZzilEzPwCNed5wbF5ryjeIK0IV4kkxuhKvZNIOYJIP3SxxEdMHXM">
+</div>
+</div>
+</section>
+<!-- 5. HONEYMOON/WEEKEND -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
+<div class="text-center mb-12">
+<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Honeymoon and Weekend</h2>
+<p class="font-body-md text-on-surface-variant">Most unforgettable getaways</p>
+</div>
+<div class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Card 1 -->
+<div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group">
+<div class="relative h-[220px]">
+<img alt="Getaway destination" class="w-full h-full object-cover" data-alt="A luxurious honeymoon suite patio overlooking a pristine ocean bay. A white canopy bed sits on a wooden deck next to a private plunge pool. The atmosphere is romantic, secluded, and premium, captured in soft, high-key natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_N0u03gTcbFnKLdgsjCdWJV2FzESeWinhclOnrmfRkIooiDvz7pRLdL8fpK5-Hsa3JsJ4KgiYK9UzydEbeiTkJxvqG4gJoDLC7ieb7_E8ud0IFUOK-FkjtyQpLfMCYDedTmEs3p60gnPXnVFD9lfsV8c17Xkc5oqe67-VHePiCCRS-NiEaTNd2tUHXaoIsdA31MM0EEZOHeQfY0YN5sEY0FgOP7sJAiMZRMXPB5RsWYoo-P9rC4UDIQGa-Dza6wKE2HTRk18uFTTC">
+<div class="absolute top-4 left-4 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
+                        Top Rated
+                    </div>
+<button class="absolute top-4 right-4 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 bg-primary/80 backdrop-blur-sm text-on-primary px-4 py-1 font-label-sm uppercase tracking-widest text-[10px]">
+                        UGANDA
+                    </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-2 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
+<div class="flex gap-4 mb-6">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2 days 3 nights
+                        </span>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span> 4-6 guest
+                        </span>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<div>
+<span class="font-headline-md text-primary">$48.25</span>
+<span class="font-label-sm text-on-surface-variant">/ person</span>
+</div>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold border border-outline-variant/20">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group">
+<div class="relative h-[220px]">
+<img alt="Getaway destination" class="w-full h-full object-cover" data-alt="A beautiful coastal view from a luxury balcony at sunset. Soft golden hour light bathes the scene, highlighting premium outdoor furniture and a serene ocean horizon. The mood is tranquil and upscale, perfectly suited for a romantic weekend getaway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq0GVEI8DUnHB0JVRzs-Bt67AcKiaHbKG9BN4Ta39l4UyIg29MOvXTD5VQ6F-lLQEFVUZoBTQPMSe4_lw6gNY85_HMozd9j90U19F_ET2vtDcZY2VoH0CwpUZtAGqtWNI0IKiUZGFxSOSv9OCnU_8EFFZHG29saux50fEkQQnUfRJhZ7buzd1h6S6cvodN3t8wlloEE6Gn7TPvCjPbrcAJ35vyM3jMGd6AtQktIRO221MRJ_s8lj3l6X0yD_wIZ-Lk5-MYEFDlpNMQ">
+<div class="absolute top-4 left-4 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
+                        Top Rated
+                    </div>
+<button class="absolute top-4 right-4 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 bg-primary/80 backdrop-blur-sm text-on-primary px-4 py-1 font-label-sm uppercase tracking-widest text-[10px]">
+                        RWANDA
+                    </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-2 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
+<div class="flex gap-4 mb-6">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2 days 3 nights
+                        </span>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span> 4-6 guest
+                        </span>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<div>
+<span class="font-headline-md text-primary">$48.25</span>
+<span class="font-label-sm text-on-surface-variant">/ person</span>
+</div>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold border border-outline-variant/20">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group pr-margin-mobile md:pr-0">
+<div class="relative h-[220px]">
+<img alt="Getaway destination" class="w-full h-full object-cover" data-alt="A secluded luxury villa surrounded by dense tropical foliage. A private infinity pool seemingly drops off into a lush green valley below. The setting is intimate and deeply connected to nature, offering a high-end, exclusive honeymoon experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxLnYfnoXgEfwpbS-_Dr4Zxz6a6J1nIvLUwuOjdtha59NAJmYkzr8tHZfpfawd7NDpQE35ZlC9H5CSyLNQcT53pVckhWmMXHWWzBi2qnvtkmRNAeXA40AMkYTVIGuzzzr20IYIDR3Qg56uOhDv_z-1p_PoNzjxyJvuubgchI3aQDTCn8lsqmUpjrk3rVQ_Gvf-Mx-nMuRBbEyfJl3Dgb9SlxBYft3WnCCa3YbJrvwXeUu34cg34Ktb4DLxLTCbcLpC-Dvfx1BueYFL">
+<div class="absolute top-4 left-4 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
+                        Top Rated
+                    </div>
+<button class="absolute top-4 right-4 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 bg-primary/80 backdrop-blur-sm text-on-primary px-4 py-1 font-label-sm uppercase tracking-widest text-[10px]">
+                        KENYA
+                    </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-2 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
+<div class="flex gap-4 mb-6">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2 days 3 nights
+                        </span>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span> 4-6 guest
+                        </span>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<div>
+<span class="font-headline-md text-primary">$48.25</span>
+<span class="font-label-sm text-on-surface-variant">/ person</span>
+</div>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold border border-outline-variant/20">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-lg flex items-center gap-2 hover:opacity-90 transition-opacity">
+                View More <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- 6. SAFARIS -->
+<section class="bg-surface-container py-section-gap-mobile md:py-section-gap mb-section-gap-mobile md:mb-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Safaris and Tours</h2>
+<p class="font-body-md text-on-surface-variant">The best Safari experiences and destinations</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-lg flex items-center gap-2 hover:opacity-90 transition-opacity self-start md:self-end">
+                    View More <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Horizontal scroll on mobile, Grid on desktop -->
+<div class="flex flex-row md:grid md:grid-cols-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Safari Item Template x4 (Simulating 8 with a row) -->
+<div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
+<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A magnificent African elephant walking majestically across a golden savanna during golden hour. The landscape is expansive, with distant acacia trees and a dusty, warm atmosphere. The photography style is high-end, editorial wildlife documentary, emphasizing the raw beauty of the natural world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGVIKKXxx26CgF5MNZBK3XU8A-6WqEVnhF21HCy3FBbcDzM6EhwpDRGwu9LZMSlRBoB_AbNjVQpa-yvXZUROlJtMs51jnEe3CcFoLaRKYaWVhqMqNU7m3hRMPXwI0-PSkXqbpzz4um7w1NwagJpFzLWS4Yo5qSiBGRuHfynKi_KPUFOC_0cC_qP-7riv2UmC2olB1-fgR5IHLFg2UyxLlLn2SPcfAsxecrAG0ojQ5UDDhqAFOm4jjupcKNRwy_Cznfj-LqSjULZvw7">
+<h3 class="font-headline-md text-primary mb-1">Uganda Gorilla Safaris</h3>
+<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
+                        Track Gorillas at affordable prices
+                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+</p>
+</div>
+<div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
+<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A thrilling view of a safari jeep driving through an open, sun-drenched East African plain. Dust kicks up behind the vehicle as it navigates towards a distant herd of zebras. The aesthetic is adventurous and high-quality, capturing the essence of a premium guided safari tour." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqmz3lnlP2Bf3KHutXPgK3OdGsNY3tNyC4fediR9biE2ROrdRcVXGdhWbfn9ejgzkzT_F59c81D57RMWuvqM2ysH78EvanrXWjhfhvWcBOhV8HIyGhFWV9kN9fNWX4xAKlRenW_XTt3wPGTEQYIa0x_d6UYPexgJ5oSxdp75bYtS2cOWFE73L6dYdQDdqo45f2UgGRD0ULzfE-UKCUxeyeAnhZX7AtFxfnTu_yRG3-P1V-aIDK9fylDD7aiyMFp_6P7oBVgQgu2hLM">
+<h3 class="font-headline-md text-primary mb-1">Masai Mara Gorilla Trek</h3>
+<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
+                        Track Gorillas at affordable prices
+                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+</p>
+</div>
+<div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
+<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A close-up, high-definition portrait of a lion resting in tall, dry grass. The lighting highlights the texture of its mane and the intensity of its gaze. The image conveys a sense of wild luxury and close-encounter wildlife experiences typical of high-end safari packages." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmrIs8qN_NNwsAegP_ZkBaHovMqWaLZUhfQJrEoUEL1PEhCD-pKRulpZerWCBATlHKyaJgfI0nuDmrHP3G2GXvW9jBAW4zhM21twk9cOaJbJVgtuSPaUICx4jg5dJ2ERi08IU3xAJdRG12F9OXlhC_ZYfP0ycDvfNGslDWMZJIYeU6KZq4CYPmvNYlTvRdMpWhZbBvvD8r3bUl7S0CnQYd-NkcgQrlPhPyi7RYkv4TRLIIB0G3heit_4VeO5-dddeTEf-5EAtElM3k">
+<h3 class="font-headline-md text-primary mb-1">Gorilla Trek and Beach</h3>
+<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
+                        Track Gorillas at affordable prices
+                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+</p>
+</div>
+<div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer pr-margin-mobile md:pr-4">
+<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A serene landscape showing a lush, misty mountainous region in East Africa, typical of gorilla trekking habitats. Dense green vegetation covers the steep slopes under a soft, overcast sky. The atmosphere is mysterious and inviting, appealing to adventurous nature lovers seeking premium travel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8fd2F4xmOI24BBfGAANMmukiMnibElPqPbhijxyRbLiqHipWEjUmO77W-kQBdSguNEKbZJ0c_ZEi2o0BRYbFc-RGwaSddI-TbAwf0U-zgmrXpXLY3QasKVvnljhZZsgXFRQVpfaSYpy-wJNmP5gl4Dqnz3J_R_pxp09LXXh1HOYttSp2n1LLUZ8LcubNSvl9ulogqugPElOP-lfgsXh7VxBH8ytJL69froZvsM6rdODYxVLBXRpnlJoUQ-8zTRyI9W672jwMjz5MV">
+<h3 class="font-headline-md text-primary mb-1">Uganda Gorilla Safaris</h3>
+<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
+                        Track Gorillas at affordable prices
+                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. RENT A CAR -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
+<div class="text-center mb-12">
+<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Rent A Car In Uganda</h2>
+<p class="font-body-md text-on-surface-variant">Uganda's Leading Car Rental Service</p>
+</div>
+<div class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Car Card 1 -->
+<div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[32px] p-6 border border-outline-variant/20 shadow-sm flex flex-col">
+<div class="h-[180px] flex items-center justify-center mb-6 relative">
+<!-- Placeholder for car image on white bg -->
+<div class="w-full h-full bg-surface-container rounded-xl flex items-center justify-center overflow-hidden">
+<img alt="Toyota LandCruiser" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A sleek, modern, rugged SUV (like a Toyota LandCruiser) isolated against a clean, bright white background. The vehicle is styled for off-road luxury safaris, appearing pristine and reliable. The lighting is studio-quality, highlighting the car's robust design and premium appeal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuEn2JDlkQvxU9z3tE6OZmxspnWpc3IWn1cuKPIy7LDDyjDmIoHsbFAIuW5O7W2vURK_RJpypgFFiuo6uI1zcPoegW5EaTf9wySg-5IocVnCFWprDaVojCUTN9jIVsraiJyG4mBW3KxdhXT-32jtsNJo2g-ko3RIPfcvVFZTorQzE_dzc6ScJwPSF3lpA--A-Q6mJLPrWwynptD_SMuOx6LJOMNSFpAmydClsGLNmZBkAYjelLNR5QpsF589W8uKNeoJrzghYRtqVI">
+</div>
+<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-label-sm text-on-surface-variant font-bold shadow-sm">
+                        with driver
+                    </div>
+</div>
+<h3 class="font-headline-lg text-primary mb-1">Toyota LandCruiser</h3>
+<p class="font-label-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Kampala, Uganda
+                </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">speed</span> 25,100 miles
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">settings</span> Automatic
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span> Diesel
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">airline_seat_recline_normal</span> 7 seats
+                    </div>
+</div>
+<div class="flex justify-between items-center mt-auto border-t border-outline-variant/20 pt-6">
+<span class="font-headline-md text-primary font-bold">UGX.120,000</span>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
+</div>
+</div>
+<!-- Car Card 2 -->
+<div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[32px] p-6 border border-outline-variant/20 shadow-sm flex flex-col">
+<div class="h-[180px] flex items-center justify-center mb-6 relative">
+<div class="w-full h-full bg-surface-container rounded-xl flex items-center justify-center overflow-hidden">
+<img alt="Toyota Rav4" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A compact, stylish SUV (like a Toyota Rav4) presented against a stark white studio background. The vehicle looks polished, versatile, and ready for both city tours and light off-road travel. High-key lighting emphasizes its clean lines and modern, premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_VUYmkjORR4RMiOv47EKZIkO3HLE5PnID9pEYMME4tA82T_Es0rIz_0V3RE4J3324wu9w9gjZBMUk2SDtitEq4HLYbQgJAV0TMEErmAwHBmDQZnnWfHp6JUoT6eSMD8xKu6OS74NNBa2rErid9zjKqe-Kk-u2_z3bgj_RAaigBuP6rCVDuI-Ct1PPVr9mG5YATyO0X5Gz5VdiClzclazb45XYnHKNKO1PpMpHwNfeSqB3XLUO76mjkopjlAy1ma-nupTxqI7Twd7">
+</div>
+<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-label-sm text-on-surface-variant font-bold shadow-sm">
+                        with driver
+                    </div>
+</div>
+<h3 class="font-headline-lg text-primary mb-1">Toyota Rav4</h3>
+<p class="font-label-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Kampala, Uganda
+                </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">speed</span> 25,100 miles
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">settings</span> Automatic
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span> Diesel
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">airline_seat_recline_normal</span> 5 seats
+                    </div>
+</div>
+<div class="flex justify-between items-center mt-auto border-t border-outline-variant/20 pt-6">
+<span class="font-headline-md text-primary font-bold">UGX.120,000</span>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
+</div>
+</div>
+<!-- Car Card 3 -->
+<div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[32px] p-6 border border-outline-variant/20 shadow-sm flex flex-col pr-margin-mobile md:pr-6">
+<div class="h-[180px] flex items-center justify-center mb-6 relative">
+<div class="w-full h-full bg-surface-container rounded-xl flex items-center justify-center overflow-hidden">
+<img alt="4X4 Tour Vehicle" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A heavy-duty, custom-built 4x4 safari tour vehicle with an extended body, isolated on a pure white background. The vehicle features large windows and a pop-up roof designed for wildlife viewing. The presentation is clean, professional, and indicative of a reliable, high-end travel service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE4U9nFjjVPgizPu9_wkLVY67HZg81L_l7CC3O9MEViuF9YIbTnLHTN7QBJ2tPGN3UQNQFDHzLJTgM0Imtw48AA8iY8oe5-qOrTSiQoJquMjjQhUSP9hX-EOU7X2p2GpXcZm1_D36gXRlta6RNtXuYQpXlVVbEgGiqWjHdShFZsmDME1vHqXyy_BQpyjf1jgluNg9ery_2VA_RwYhzImjaUdiOHB5HTKzmeFnUw7bbcHi4L88xqWnsVfV8m3uhhN5tbyXWfWGxLe7u">
+</div>
+<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-label-sm text-on-surface-variant font-bold shadow-sm">
+                        with driver
+                    </div>
+</div>
+<h3 class="font-headline-lg text-primary mb-1">4X4 Tour Vehicle</h3>
+<p class="font-label-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Kampala, Uganda
+                </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">speed</span> 25,100 miles
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">settings</span> Automatic
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span> Diesel
+                    </div>
+<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">airline_seat_recline_normal</span> 7 seats
+                    </div>
+</div>
+<div class="flex justify-between items-center mt-auto border-t border-outline-variant/20 pt-6">
+<span class="font-headline-md text-primary font-bold">UGX.120,000</span>
+<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-lg flex items-center gap-2 hover:opacity-90 transition-opacity">
+                View More <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- 8. DESTINATIONS -->
+<section class="bg-surface-container-low py-section-gap-mobile md:py-section-gap mb-section-gap-mobile md:mb-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Eyalama Destinations</h2>
+<p class="font-body-md text-on-surface-variant">Travel Across East Africa With Eyalama</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-lg flex items-center gap-2 hover:opacity-90 transition-opacity self-start md:self-end">
+                    View All <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Dest 1 -->
+<div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
+<img alt="Uganda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A breathtaking landscape of Uganda, featuring a serene crater lake surrounded by lush, vibrant green rolling hills. The sky is partially cloudy, casting dynamic shadows over the dramatic terrain. The scene captures the raw, untouched beauty and premium nature exploration aesthetic of the 'Pearl of Africa'." data-location="Uganda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzEqkLJka4YlAhdx8i6PQKK59LhC7qzUUMBNwC8GnSoAq-OFyYFqAvZEiPSDhScoDB2FY7QV45cv7QakfLAcNKBEOzGkL8rGtnpNMOtErFCC9ioDB7aoCig4AEyz9LCQ4XeyPOl6v7W8pO3osqCB95-ZVHSsi5Bk5ZuyMorPOFp5gFpArDOPQUz5Z2NN8ybVkyQwsmnEvwOBEPq1QPhwfHEh-zuFREMTX7tZqx2pA379FCtHLzREI225QqteIhRdN_m74d2BBsXyw6">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div>
+<h3 class="font-headline-md text-primary">Uganda</h3>
+<p class="font-label-sm text-on-surface-variant">Explore The Pearl</p>
+</div>
+<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+</div>
+</div>
+<!-- Dest 2 -->
+<div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
+<img alt="Kenya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An iconic wide-angle shot of the Kenyan savanna during the Great Migration. Countless wildebeest dot the vast golden plains under a dramatic, expansive sky. In the distance, flat-topped acacia trees silhouette against the horizon. The image conveys an epic, high-end safari adventure." data-location="Kenya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPZgL6U9u5sdFUrZJf4dLcmPJc60rRsqUIpjjdoqqsh_B_iaO0qWUcZfn2vmfRNkGTY_2Ygah_NSnZZ8Avh-uhGHL2Dg1spz1vSfHB2yso1toJTrzpyspeLFDp4iCaaxE9floGNBbINVkJjA2IQkUblie3LlvEwBcuZuM3NzcATpqBjU2Nc3H4KP6ghyZFKDrpS6QcTwa9qGqqP2p-UjwHmmRxTC6OgRmdzylZuNUPODTpfSDPv8sQcZsklelyuQBwylZV4dhSD1aM">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div>
+<h3 class="font-headline-md text-primary">Kenya</h3>
+<p class="font-label-sm text-on-surface-variant">Discover Kenya</p>
+</div>
+<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+</div>
+</div>
+<!-- Dest 3 -->
+<div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
+<img alt="Tanzania" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A majestic view of Mount Kilimanjaro rising above the clouds in Tanzania. The snow-capped peak is illuminated by early morning light, contrasting with the dark, forested foothills. The composition is awe-inspiring and aspirational, perfectly suited for a luxury travel destination showcase." data-location="Tanzania" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqRhJ62jRV-EtWnbMokcl5VnSlM8zxQceWjrkRB_kZGzpQ76RzXjtlzhOu-nCfW1TfjjxpEV8IJGuzz3mEFKQYemo9UY7QgmW8lKsAo93gez-kVSE1YWJUpvni93LtUtGsNvn-Q9AVvaueuC_yCfZ_9lbT2huzeZC0U4UiN4HXTwDp9ixnZfBDCA2F-uL2FP29jj8CfPvBLnXzwYHwpBn-8d6-zCdJnqfG122L6Pk4pQsm4XhRA3yHI2xoiX-HgP7CHibBi4uWtsZ3">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div>
+<h3 class="font-headline-md text-primary">Tanzania</h3>
+<p class="font-label-sm text-on-surface-variant">Discover Tanzania</p>
+</div>
+<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+</div>
+</div>
+<!-- Dest 4 -->
+<div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
+<img alt="Rwanda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A tranquil, misty morning view of the Volcanoes National Park in Rwanda. Layered mountain ridges fade into the distance, covered in thick rainforest vegetation. The moody, atmospheric lighting creates a sense of luxury eco-tourism and exclusive wilderness exploration." data-location="Rwanda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1PClgfRROfBLT1s3wwkhIwdl-qKZCy3kj5cOwprrRuh6yxkZ6a0IBIG-UzhmMGJAHbYpzUyan2oO0n_eacX6imSWLJtoBhSHmczTsblkSujnLQ9jWb6pJyoOttZMFjnwAm6X3Sv0GJ58JCUGN6kr-Qe1b65uEqiBPV-Iob7bCTfrz70bbKSTC1qf4Wi4ZSWN64FyQBjkVQB0TioLCkQ0wNnWffq22ay3_dt1SlcSPQBh8nxnSVfT8AMbvIjVD93aBHR_w7H9Be8-o">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div>
+<h3 class="font-headline-md text-primary">Rwanda</h3>
+<p class="font-label-sm text-on-surface-variant">Discover Rwanda</p>
+</div>
+<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. PARTNERS -->
+<section class="py-12 border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center">
+<h3 class="font-headline-md text-primary mb-8">Our Partners</h3>
+<div class="flex flex-nowrap overflow-x-auto hide-scrollbar gap-12 items-center justify-start md:justify-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500 pb-4">
+<span class="font-headline-lg font-bold text-outline">PayPal</span>
+<span class="font-headline-lg font-bold text-outline">stripe</span>
+<span class="font-headline-lg font-bold text-outline">Payoneer</span>
+<span class="font-headline-lg font-bold text-outline italic">VISA</span>
+<span class="font-headline-lg font-bold text-outline">Cash App</span>
+<span class="font-headline-lg font-bold text-outline">bitcoin</span>
+<span class="font-headline-lg font-bold text-outline">DISCOVER</span>
+</div>
+</div>
+</section>
+<!-- 10. FOOTER (Generated from JSON structure) -->
+<footer class="bg-tertiary dark:bg-tertiary-container text-on-tertiary dark:text-on-tertiary-container w-full py-section-gap px-margin-mobile md:px-gutter border-t border-on-tertiary-container/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-container-max mx-auto mb-16">
+<!-- Brand & Contact -->
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-on-tertiary mb-6 flex items-center gap-4">
+<span class="material-symbols-outlined text-[32px] text-secondary-container">diamond</span>
+                     Eyalama Adventures
+                </div>
+<div class="space-y-4 font-body-md opacity-90 text-on-tertiary-container">
+<p class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[20px] mt-1">location_on</span>
+                        4517 Washington Ave. Manchester, Kentucky 39495
+                    </p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+                        Hours: 8:00 - 17:00, Mon - Sat
+                    </p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                        support@travila.com
+                    </p>
+</div>
+<div class="mt-8">
+<p class="font-label-lg mb-4 text-on-tertiary">Follow us</p>
+<div class="flex gap-4">
+<a class="p-2 border border-on-tertiary-container/50 rounded-full hover:bg-on-tertiary hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="p-2 border border-on-tertiary-container/50 rounded-full hover:bg-on-tertiary hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="p-2 border border-on-tertiary-container/50 rounded-full hover:bg-on-tertiary hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined">play_arrow</span></a>
+</div>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="font-headline-md text-on-tertiary mb-6">Quick Links</h4>
+<ul class="space-y-4 font-label-lg text-on-tertiary-container">
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Home</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Tour Packages</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Jinja Tours</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Gulu Tours</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Rent A Car</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Contact Us</a></li>
+</ul>
+</div>
+<!-- More Links -->
+<div>
+<h4 class="font-headline-md text-on-tertiary mb-6 invisible">More</h4>
+<ul class="space-y-4 font-label-lg text-on-tertiary-container">
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Mbarara Tours</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Kampala Tours</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Golf Tours</a></li>
+<li><a class="text-secondary-container hover:underline transition-all" href="#">Safaris</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">About</a></li>
+<li><a class="hover:underline transition-all hover:text-on-tertiary" href="#">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<!-- Help -->
+<div class="flex flex-col items-start md:items-end justify-start">
+<div class="flex items-center gap-3 bg-tertiary-container px-6 py-4 rounded-2xl border border-on-tertiary-container/20">
+<span class="material-symbols-outlined text-[32px] text-secondary-container">support_agent</span>
+<div>
+<p class="font-label-sm text-on-tertiary-container">Need help? Call us</p>
+<p class="font-headline-md text-secondary-container">1-800-222-8888</p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-on-tertiary-container/30 font-label-sm text-on-tertiary-container gap-4">
+<p>© 2024 Eyalama Adventures All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-on-tertiary transition-colors" href="#">Terms</a>
+<a class="hover:text-on-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-tertiary transition-colors" href="#">Legal notice</a>
+<a class="hover:text-on-tertiary transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Navigation Drawer Toggle
+        const drawer = document.getElementById('nav-drawer');
+        const openBtn = document.getElementById('open-drawer');
+        const closeBtn = document.getElementById('close-drawer');
+
+        openBtn.addEventListener('click', () => {
+            drawer.classList.remove('translate-x-full');
+            drawer.classList.add('translate-x-0');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            drawer.classList.remove('translate-x-0');
+            drawer.classList.add('translate-x-full');
+        });
+
+        // TopNav scroll effect
+        const topNav = document.getElementById('top-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                topNav.classList.add('bg-surface-container-lowest/90', 'shadow-sm');
+                topNav.classList.remove('bg-transparent', 'text-on-primary');
+            } else {
+                topNav.classList.remove('bg-surface-container-lowest/90', 'shadow-sm');
+                topNav.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body></html>
