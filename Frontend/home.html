@@ -156,26 +156,33 @@
 <!-- 1. HERO SECTION -->
 <header class="relative w-full h-[884px] min-h-[600px] flex flex-col">
 <!-- TopAppBar -->
-<div class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-outline-variant/20 transition-all duration-300 bg-surface-container-lowest/90 shadow-sm" id="top-nav">
-<div class="flex justify-between items-center px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto">
-<!-- Hamburger (Mobile) -->
-<button class="md:hidden p-2 text-primary hover:opacity-80 transition-opacity duration-200" id="open-drawer">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<!-- Logo -->
-<a class="font-headline-md text-headline-md font-bold text-primary flex-1 text-center md:text-left" href="#">Eyalama Adventures</a>
-<!-- Desktop Nav Cluster -->
-<nav class="hidden md:flex items-center gap-8 bg-surface-container-lowest/80 backdrop-blur-lg px-8 py-3 rounded-full border border-outline-variant/30 shadow-sm">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-lg" href="#">Home</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Packages</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Safari</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Destinations</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg" href="#">Rentals</a>
-</nav>
-<!-- Trailing Action -->
-<div class="flex-1 flex justify-end hidden md:flex">
-<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-lg hover:opacity-80 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">Contact Us</button>
-</div>
+<div class="fixed top-2 left-3 right-3 z-50 rounded-2xl backdrop-blur-xl border border-white/10 transition-all duration-500 bg-transparent" id="top-nav">
+<div class="relative flex items-center px-4 md:px-gutter py-3 max-w-container-max mx-auto">
+
+  <!-- LEFT: Logo Badge (always visible) -->
+  <a class="flex items-center flex-shrink-0 z-10" href="#" aria-label="Eyalama Adventures Home">
+    <img alt="Eyalama Adventures logo badge" class="h-11 w-auto object-contain" src="assets/eyalama_logo-removebg.png">
+  </a>
+
+  <!-- CENTER: Desktop pill nav — absolutely centered, hidden on mobile -->
+  <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10 items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-lg px-3 py-2 rounded-full border border-outline-variant/30 shadow-sm">
+    <a class="bg-[#1a1c1c] text-white rounded-full px-6 py-2.5 font-label-lg transition-all duration-200 whitespace-nowrap" href="#">Home</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Packages</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Safari</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Destinations</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Rentals</a>
+  </nav>
+
+  <!-- RIGHT: Hamburger on mobile / Contact Us on desktop -->
+  <div class="ml-auto flex items-center z-10">
+    <!-- Mobile hamburger -->
+    <button class="md:hidden p-2 text-primary hover:opacity-80 transition-opacity duration-200" id="open-drawer" aria-label="Open navigation menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <!-- Desktop CTA -->
+    <button class="hidden md:inline-flex items-center bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-lg hover:opacity-80 transition-opacity duration-200 active:scale-95">Contact Us</button>
+  </div>
+
 </div>
 </div>
 <!-- Hero Background & Content -->
@@ -183,67 +190,94 @@
 <!-- Overlay for text readability -->
 <div class="absolute inset-0 bg-black/30"></div>
 </div>
-<div class="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-margin-mobile pt-24 pb-32">
-<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full font-label-lg mb-6 shadow-sm border border-outline-variant/20 inline-flex items-center gap-2">
-                Travel more, worry less
-            </span>
-<h1 class="font-display-lg-mobile md:font-display-lg text-on-primary max-w-4xl mx-auto drop-shadow-md">
-                Explore with Us, one Journey at a time
-            </h1>
-<p class="font-body-lg text-on-primary mt-6 max-w-2xl mx-auto drop-shadow-sm opacity-90 hidden md:block">
-                Eyalama tours and travel offers personalized and hustle free travel experiences, tailored to meet ur unique preferences and needs.
-            </p>
+<div class="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-4 md:px-gutter w-full pt-28 pb-36">
+  <!-- Badge pill -->
+  <span class="bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full font-label-lg mb-5 shadow-sm border border-white/20 inline-flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-secondary-container inline-block"></span>
+    Travel more, worry less
+  </span>
+  <!-- Hero H1 — massive, centred, mobile-first -->
+  <h1 class="text-[52px] leading-[1.0] md:text-[96px] font-black tracking-tighter text-white drop-shadow-lg max-w-5xl mx-auto">
+    Explore with Us, one Journey at a time
+  </h1>
+  <!-- Subtitle — visible on all screens -->
+  <p class="font-body-lg text-white/85 mt-6 max-w-xl mx-auto drop-shadow-sm leading-relaxed">
+    Eyalama tours and travel offers personalised, hustle-free travel experiences tailored to your unique preferences.
+  </p>
 </div>
 </header>
 <!-- 2. FLOATING SEARCH -->
 <section class="relative z-20 -mt-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto mb-section-gap-mobile md:mb-section-gap">
 <div class="bg-surface-container-lowest rounded-3xl shadow-[0_12px_32px_rgba(0,0,0,0.08)] p-6 md:p-8 border border-outline-variant/10">
-<div class="mb-6 border-b border-outline-variant/20 pb-4 flex gap-6 overflow-x-auto hide-scrollbar">
-<button class="font-label-lg bg-primary text-on-primary px-6 py-2 rounded-full whitespace-nowrap">Tours</button>
-<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Packages</button>
-<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Tickets</button>
-<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Rental</button>
-<button class="font-label-lg text-on-surface-variant hover:text-primary px-4 py-2 whitespace-nowrap transition-colors">Activities</button>
+  <!-- Book with us header -->
+  <div class="mb-5">
+    <h2 class="text-[22px] md:text-[28px] font-extrabold tracking-tight text-[#1a1c1c] leading-tight">
+      Book With Us Now. <span class="text-secondary">GET A FREE QUOTE</span>
+    </h2>
+  </div>
+  <!-- Tab row -->
+  <div class="mb-5 border-b border-outline-variant/20 pb-4 flex gap-1 overflow-x-auto hide-scrollbar">
+<button class="font-label-lg bg-[#1a1c1c] text-white px-6 py-2.5 rounded-full whitespace-nowrap transition-all duration-200">Tours</button>
+<button class="font-label-lg text-on-surface-variant hover:bg-[#f3f3f3] hover:text-[#1a1c1c] px-6 py-2.5 rounded-full whitespace-nowrap transition-all duration-200">Packages</button>
+<button class="font-label-lg text-on-surface-variant hover:bg-[#f3f3f3] hover:text-[#1a1c1c] px-6 py-2.5 rounded-full whitespace-nowrap transition-all duration-200">Tickets</button>
+<button class="font-label-lg text-on-surface-variant hover:bg-[#f3f3f3] hover:text-[#1a1c1c] px-6 py-2.5 rounded-full whitespace-nowrap transition-all duration-200">Rental</button>
+<button class="font-label-lg text-on-surface-variant hover:bg-[#f3f3f3] hover:text-[#1a1c1c] px-6 py-2.5 rounded-full whitespace-nowrap transition-all duration-200">Activities</button>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
+<!-- DESTINATION -->
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors group">
 <label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Destination</label>
-<div class="flex justify-between items-center">
-<span class="font-label-lg text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant">location_on</span>
-                            Where to?
-                        </span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0">location_on</span>
+<select class="w-full bg-transparent font-label-lg font-semibold text-[#1a1c1c] focus:outline-none cursor-pointer appearance-none">
+<option value="kampala">Kampala, UG</option>
+<option value="jinja">Jinja, UG</option>
+<option value="entebbe">Entebbe, UG</option>
+<option value="bwindi">Bwindi, UG</option>
+<option value="qenp">Queen Elizabeth National Park, UG</option>
+<option value="masaimara">Masai Mara, KE</option>
+<option value="serengeti">Serengeti, TZ</option>
+</select>
 </div>
 </div>
-<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
-<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Tour package</label>
-<div class="flex justify-between items-center">
-<span class="font-label-lg text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant">tour</span>
-                            Any
-                        </span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+<!-- TOUR PACKAGE -->
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors group">
+<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Tour Package</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0">tour</span>
+<select class="w-full bg-transparent font-label-lg font-semibold text-[#1a1c1c] focus:outline-none cursor-pointer appearance-none">
+<option value="gorilla">Gorilla Trekking Safari</option>
+<option value="nile">Source of the Nile Adventure</option>
+<option value="honeymoon">Luxury Honeymoon Escape</option>
+<option value="weekend">Weekend Getaway Package</option>
+<option value="gamedrive">Savannah Game Drive</option>
+</select>
 </div>
 </div>
-<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
+<!-- DURATION -->
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors group">
 <label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Duration</label>
-<div class="flex justify-between items-center">
-<span class="font-label-lg text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant">calendar_month</span>
-                            Any Dates
-                        </span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0">calendar_month</span>
+<select class="w-full bg-transparent font-label-lg font-semibold text-[#1a1c1c] focus:outline-none cursor-pointer appearance-none">
+<option value="1-2">1 – 2 Days</option>
+<option value="3-5" selected>3 – 5 Days</option>
+<option value="1w">1 Week</option>
+<option value="2w">2+ Weeks</option>
+</select>
 </div>
 </div>
-<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors cursor-pointer group">
-<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Guest</label>
-<div class="flex justify-between items-center">
-<span class="font-label-lg text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant">group</span>
-                            2 adults, 0 children
-                        </span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">expand_more</span>
+<!-- GUESTS -->
+<div class="border border-outline-variant/30 rounded-2xl p-4 hover:border-primary transition-colors group">
+<label class="block font-label-sm text-on-surface-variant mb-1 group-hover:text-primary transition-colors">Guests</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0">group</span>
+<select class="w-full bg-transparent font-label-lg font-semibold text-[#1a1c1c] focus:outline-none cursor-pointer appearance-none">
+<option value="1a">1 Adult</option>
+<option value="2a0c" selected>2 Adults, 0 Children</option>
+<option value="2a2c">2 Adults, 2 Children</option>
+<option value="family">Family Group (5+)</option>
+</select>
 </div>
 </div>
 </div>
@@ -259,7 +293,7 @@
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
 <div class="flex justify-between items-end mb-8">
 <div>
-<h2 class="font-headline-lg md:font-display-lg text-primary mb-2">Our Featured Tours</h2>
+<h2 class="text-[32px] md:text-[48px] font-extrabold tracking-tight text-primary mb-2">Our Featured Tours</h2>
 <p class="font-body-md text-on-surface-variant">Favorite destinations based on customer reviews</p>
 </div>
 <div class="hidden md:flex gap-4">
@@ -277,19 +311,19 @@
 <img alt="Scenic coast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious coastal resort view from a private wooden deck at sunset. A white canopy cabana sits next to a pristine infinity pool overlooking the ocean. The lighting is warm and golden, reflecting a premium, relaxing vacation aesthetic typical of a high-end honeymoon destination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRDdyxhk7YGZ903JIa-GGH6Rbw4kTh9UM4yfh4-BOiJXNNN1ev07HZiId8c7wZ380cawL1diLR5w02_sHh_9anaHbUUSrw4pqhA-epGGEh8pArYf3ELBObJ_wMwKCNSFyk0WMiMamoneI0kvPMO_sRGocaT9-jSOvV8Gtb2xUTcdw8ofYRwr00TkW6PqCprDbu9UsahwReQBK7okHZlTd3Bx1ABOM22qZSjZAizncK3rXrn0gGWvhRt5w76LJnw5BYTjxpd8ntNAiF">
 </div>
 <div class="p-6 flex flex-col flex-1">
-<h3 class="font-headline-md text-primary mb-3 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
 <div class="flex gap-4 mb-6 mt-auto">
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[14px] font-medium text-[#444748] flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">schedule</span> 2 days 3 nights
                         </span>
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[14px] font-medium text-[#444748] flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">group</span> 4-6 guest
                         </span>
 </div>
 <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
 <div>
 <span class="font-headline-md text-primary">$48.25</span>
-<span class="font-label-sm text-on-surface-variant">/ couple</span>
+<span class="text-[14px] font-medium text-[#444748]">/ couple</span>
 </div>
 <button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold">Book Now</button>
 </div>
@@ -304,19 +338,19 @@
 <img alt="City view" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant daytime view of a historic European city riverfront. Grand architecture lines the wide river, with boats gently cruising on the water. The sky is bright blue with scattered clouds, creating a lively, culturally rich atmosphere suitable for a premium city tour package." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMCvAptZqvcMKEz2SWZ1MqEJ2b086aCuaKpnJiuedH6-8y2vxzMBv380aSxpmV90HVy3hQRK1u3gE-lYjqmHqxnXFk4RIbtvl4bqStcP26n6chAJn-ojl1PZDbmltpdKBw2zoU-jWwrchl7Kh1yz8cwYCZHQNZT40wE7tDwiiiXRaoGcfi_qxdJyiK1pL37YQ8RCtQDbv73Q4nRpRVwxWDH4IjIHVnSXzapfvCMzv38WHy239NeEoKzx5fJy4dbu-ALhGfjrRjhj4">
 </div>
 <div class="p-6 flex flex-col flex-1">
-<h3 class="font-headline-md text-primary mb-3 line-clamp-2">NYC: Food Tastings and Culture Tour</h3>
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1 line-clamp-2">NYC: Food Tastings and Culture Tour</h3>
 <div class="flex gap-4 mb-6 mt-auto">
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[14px] font-medium text-[#444748] flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">schedule</span> 3 days 3 nights
                         </span>
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[14px] font-medium text-[#444748] flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">group</span> 4-6 guest
                         </span>
 </div>
 <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
 <div>
 <span class="font-headline-md text-primary">$17.32</span>
-<span class="font-label-sm text-on-surface-variant">/ person</span>
+<span class="text-[14px] font-medium text-[#444748]">/ person</span>
 </div>
 <button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold">Book Now</button>
 </div>
@@ -331,19 +365,19 @@
 <img alt="Resort pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious tropical resort pool area surrounded by lush palm trees and elegant white architecture. Crystal clear blue water reflects the bright sunshine. Lounge chairs are neatly arranged, inviting relaxation. The overall mood is high-end, serene, and perfect for a premium getaway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqbTUyK4Wji0swSiGz6ubuEWQlIF-i_Xz_G_fUwOW22rXzRNujtbF42uwNFNaWOHCNfvvyU10NazdeInMN1UfgOEquFBfNm3tRJy7bY3R44GheFWDU4PGsHcss_i7pJeu9hgiyFS6gfK5hWzy8B2lezKodnqkYeU75OjoQAhKIchf7nrinvklxw1_vfIF8Qf22RHLE3FK7jNdW99JxylsNqC7zTWXbIy6eO3nSSss2mLmR9foXJbwY-2gdwgHw_L-m2rzaJvuUHDd4">
 </div>
 <div class="p-6 flex flex-col flex-1">
-<h3 class="font-headline-md text-primary mb-3 line-clamp-2">Grand Canyon Horseshoe Bend 2 days</h3>
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1 line-clamp-2">Grand Canyon Horseshoe Bend 2 days</h3>
 <div class="flex gap-4 mb-6 mt-auto">
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[14px] font-medium text-[#444748] flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">schedule</span> 7 days 6 nights
                         </span>
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[14px] font-medium text-[#444748] flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">group</span> 4-6 guest
                         </span>
 </div>
 <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
 <div>
 <span class="font-headline-md text-primary">$15.63</span>
-<span class="font-label-sm text-on-surface-variant">/ person</span>
+<span class="text-[14px] font-medium text-[#444748]">/ person</span>
 </div>
 <button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold">Book Now</button>
 </div>
@@ -355,7 +389,7 @@
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
 <div class="bg-surface-container-low rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-sm border border-outline-variant/10">
 <div class="p-8 md:p-16 md:w-1/2 flex flex-col justify-center">
-<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-6 uppercase tracking-tight">EYALAMA ADVENTURES</h2>
+<h2 class="text-[32px] md:text-[48px] font-extrabold tracking-tight uppercase text-primary mb-6">EYALAMA ADVENTURES</h2>
 <p class="font-body-md text-on-surface-variant mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
@@ -376,14 +410,14 @@
 <!-- 5. HONEYMOON/WEEKEND -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
 <div class="text-center mb-12">
-<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Honeymoon and Weekend</h2>
+<h2 class="text-[32px] md:text-[48px] font-extrabold tracking-tight text-primary mb-2">Honeymoon and Weekend</h2>
 <p class="font-body-md text-on-surface-variant">Most unforgettable getaways</p>
 </div>
 <div class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
 <!-- Card 1 -->
 <div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group">
 <div class="relative h-[220px]">
-<img alt="Getaway destination" class="w-full h-full object-cover" data-alt="A luxurious honeymoon suite patio overlooking a pristine ocean bay. A white canopy bed sits on a wooden deck next to a private plunge pool. The atmosphere is romantic, secluded, and premium, captured in soft, high-key natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_N0u03gTcbFnKLdgsjCdWJV2FzESeWinhclOnrmfRkIooiDvz7pRLdL8fpK5-Hsa3JsJ4KgiYK9UzydEbeiTkJxvqG4gJoDLC7ieb7_E8ud0IFUOK-FkjtyQpLfMCYDedTmEs3p60gnPXnVFD9lfsV8c17Xkc5oqe67-VHePiCCRS-NiEaTNd2tUHXaoIsdA31MM0EEZOHeQfY0YN5sEY0FgOP7sJAiMZRMXPB5RsWYoo-P9rC4UDIQGa-Dza6wKE2HTRk18uFTTC">
+<img alt="Ssese Islands Romantic Escape" class="w-full h-full object-cover" data-alt="A luxurious honeymoon suite patio overlooking a pristine ocean bay. A white canopy bed sits on a wooden deck next to a private plunge pool. The atmosphere is romantic, secluded, and premium, captured in soft, high-key natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_N0u03gTcbFnKLdgsjCdWJV2FzESeWinhclOnrmfRkIooiDvz7pRLdL8fpK5-Hsa3JsJ4KgiYK9UzydEbeiTkJxvqG4gJoDLC7ieb7_E8ud0IFUOK-FkjtyQpLfMCYDedTmEs3p60gnPXnVFD9lfsV8c17Xkc5oqe67-VHePiCCRS-NiEaTNd2tUHXaoIsdA31MM0EEZOHeQfY0YN5sEY0FgOP7sJAiMZRMXPB5RsWYoo-P9rC4UDIQGa-Dza6wKE2HTRk18uFTTC">
 <div class="absolute top-4 left-4 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
                         Top Rated
                     </div>
@@ -394,20 +428,13 @@
                         UGANDA
                     </div>
 </div>
-<div class="p-6">
-<h3 class="font-headline-md text-primary mb-2 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
-<div class="flex gap-4 mb-6">
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">schedule</span> 2 days 3 nights
-                        </span>
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">group</span> 4-6 guest
-                        </span>
-</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1 line-clamp-2">Ssese Islands Romantic Escape</h3>
+<p class="text-[14px] font-medium text-[#444748] mb-6">All-inclusive luxury beach resort holiday on Lake Victoria</p>
 <div class="flex justify-between items-center mt-auto">
 <div>
-<span class="font-headline-md text-primary">$48.25</span>
-<span class="font-label-sm text-on-surface-variant">/ person</span>
+<span class="font-headline-md text-primary">$450</span>
+<span class="text-[14px] font-medium text-[#444748]">/ couple</span>
 </div>
 <button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold border border-outline-variant/20">Book Now</button>
 </div>
@@ -416,7 +443,7 @@
 <!-- Card 2 -->
 <div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group">
 <div class="relative h-[220px]">
-<img alt="Getaway destination" class="w-full h-full object-cover" data-alt="A beautiful coastal view from a luxury balcony at sunset. Soft golden hour light bathes the scene, highlighting premium outdoor furniture and a serene ocean horizon. The mood is tranquil and upscale, perfectly suited for a romantic weekend getaway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq0GVEI8DUnHB0JVRzs-Bt67AcKiaHbKG9BN4Ta39l4UyIg29MOvXTD5VQ6F-lLQEFVUZoBTQPMSe4_lw6gNY85_HMozd9j90U19F_ET2vtDcZY2VoH0CwpUZtAGqtWNI0IKiUZGFxSOSv9OCnU_8EFFZHG29saux50fEkQQnUfRJhZ7buzd1h6S6cvodN3t8wlloEE6Gn7TPvCjPbrcAJ35vyM3jMGd6AtQktIRO221MRJ_s8lj3l6X0yD_wIZ-Lk5-MYEFDlpNMQ">
+<img alt="Jinja Nile Getaway" class="w-full h-full object-cover" data-alt="A beautiful coastal view from a luxury balcony at sunset. Soft golden hour light bathes the scene, highlighting premium outdoor furniture and a serene ocean horizon. The mood is tranquil and upscale, perfectly suited for a romantic weekend getaway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq0GVEI8DUnHB0JVRzs-Bt67AcKiaHbKG9BN4Ta39l4UyIg29MOvXTD5VQ6F-lLQEFVUZoBTQPMSe4_lw6gNY85_HMozd9j90U19F_ET2vtDcZY2VoH0CwpUZtAGqtWNI0IKiUZGFxSOSv9OCnU_8EFFZHG29saux50fEkQQnUfRJhZ7buzd1h6S6cvodN3t8wlloEE6Gn7TPvCjPbrcAJ35vyM3jMGd6AtQktIRO221MRJ_s8lj3l6X0yD_wIZ-Lk5-MYEFDlpNMQ">
 <div class="absolute top-4 left-4 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
                         Top Rated
                     </div>
@@ -424,23 +451,16 @@
 <span class="material-symbols-outlined text-[20px]">favorite</span>
 </button>
 <div class="absolute bottom-0 left-0 bg-primary/80 backdrop-blur-sm text-on-primary px-4 py-1 font-label-sm uppercase tracking-widest text-[10px]">
-                        RWANDA
+                        UGANDA
                     </div>
 </div>
-<div class="p-6">
-<h3 class="font-headline-md text-primary mb-2 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
-<div class="flex gap-4 mb-6">
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">schedule</span> 2 days 3 nights
-                        </span>
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">group</span> 4-6 guest
-                        </span>
-</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1 line-clamp-2">Jinja Nile Getaway</h3>
+<p class="text-[14px] font-medium text-[#444748] mb-6">Luxury couple retreat overlooking the Source of the Nile</p>
 <div class="flex justify-between items-center mt-auto">
 <div>
-<span class="font-headline-md text-primary">$48.25</span>
-<span class="font-label-sm text-on-surface-variant">/ person</span>
+<span class="font-headline-md text-primary">$320</span>
+<span class="text-[14px] font-medium text-[#444748]">/ couple</span>
 </div>
 <button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold border border-outline-variant/20">Book Now</button>
 </div>
@@ -449,7 +469,7 @@
 <!-- Card 3 -->
 <div class="snap-start flex-none w-[85vw] md:w-[380px] bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/10 shadow-sm flex flex-col group pr-margin-mobile md:pr-0">
 <div class="relative h-[220px]">
-<img alt="Getaway destination" class="w-full h-full object-cover" data-alt="A secluded luxury villa surrounded by dense tropical foliage. A private infinity pool seemingly drops off into a lush green valley below. The setting is intimate and deeply connected to nature, offering a high-end, exclusive honeymoon experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxLnYfnoXgEfwpbS-_Dr4Zxz6a6J1nIvLUwuOjdtha59NAJmYkzr8tHZfpfawd7NDpQE35ZlC9H5CSyLNQcT53pVckhWmMXHWWzBi2qnvtkmRNAeXA40AMkYTVIGuzzzr20IYIDR3Qg56uOhDv_z-1p_PoNzjxyJvuubgchI3aQDTCn8lsqmUpjrk3rVQ_Gvf-Mx-nMuRBbEyfJl3Dgb9SlxBYft3WnCCa3YbJrvwXeUu34cg34Ktb4DLxLTCbcLpC-Dvfx1BueYFL">
+<img alt="Queen Elizabeth Luxury Safari" class="w-full h-full object-cover" data-alt="A secluded luxury villa surrounded by dense tropical foliage. A private infinity pool seemingly drops off into a lush green valley below. The setting is intimate and deeply connected to nature, offering a high-end, exclusive honeymoon experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxLnYfnoXgEfwpbS-_Dr4Zxz6a6J1nIvLUwuOjdtha59NAJmYkzr8tHZfpfawd7NDpQE35ZlC9H5CSyLNQcT53pVckhWmMXHWWzBi2qnvtkmRNAeXA40AMkYTVIGuzzzr20IYIDR3Qg56uOhDv_z-1p_PoNzjxyJvuubgchI3aQDTCn8lsqmUpjrk3rVQ_Gvf-Mx-nMuRBbEyfJl3Dgb9SlxBYft3WnCCa3YbJrvwXeUu34cg34Ktb4DLxLTCbcLpC-Dvfx1BueYFL">
 <div class="absolute top-4 left-4 bg-surface-container-lowest text-secondary-container px-3 py-1 rounded-full font-label-sm shadow-sm flex items-center gap-1 border border-outline-variant/10">
                         Top Rated
                     </div>
@@ -457,23 +477,16 @@
 <span class="material-symbols-outlined text-[20px]">favorite</span>
 </button>
 <div class="absolute bottom-0 left-0 bg-primary/80 backdrop-blur-sm text-on-primary px-4 py-1 font-label-sm uppercase tracking-widest text-[10px]">
-                        KENYA
+                        UGANDA
                     </div>
 </div>
-<div class="p-6">
-<h3 class="font-headline-md text-primary mb-2 line-clamp-2">California Sunset/Twilight Boat Cruise</h3>
-<div class="flex gap-4 mb-6">
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">schedule</span> 2 days 3 nights
-                        </span>
-<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">group</span> 4-6 guest
-                        </span>
-</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1 line-clamp-2">Queen Elizabeth Luxury Safari</h3>
+<p class="text-[14px] font-medium text-[#444748] mb-6">Wildlife weekend trip featuring Kazinga Channel boat cruises</p>
 <div class="flex justify-between items-center mt-auto">
 <div>
-<span class="font-headline-md text-primary">$48.25</span>
-<span class="font-label-sm text-on-surface-variant">/ person</span>
+<span class="font-headline-md text-primary">$550</span>
+<span class="text-[14px] font-medium text-[#444748]">/ couple</span>
 </div>
 <button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-4 py-2 rounded-full transition-colors font-bold border border-outline-variant/20">Book Now</button>
 </div>
@@ -491,7 +504,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
 <div>
-<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Safaris and Tours</h2>
+<h2 class="text-[32px] md:text-[48px] font-extrabold tracking-tight text-primary mb-2">Safaris and Tours</h2>
 <p class="font-body-md text-on-surface-variant">The best Safari experiences and destinations</p>
 </div>
 <button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-lg flex items-center gap-2 hover:opacity-90 transition-opacity self-start md:self-end">
@@ -499,38 +512,59 @@
 </button>
 </div>
 <!-- Horizontal scroll on mobile, Grid on desktop -->
-<div class="flex flex-row md:grid md:grid-cols-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
-<!-- Safari Item Template x4 (Simulating 8 with a row) -->
+<div class="flex flex-row md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Card 1 -->
 <div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
-<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A magnificent African elephant walking majestically across a golden savanna during golden hour. The landscape is expansive, with distant acacia trees and a dusty, warm atmosphere. The photography style is high-end, editorial wildlife documentary, emphasizing the raw beauty of the natural world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGVIKKXxx26CgF5MNZBK3XU8A-6WqEVnhF21HCy3FBbcDzM6EhwpDRGwu9LZMSlRBoB_AbNjVQpa-yvXZUROlJtMs51jnEe3CcFoLaRKYaWVhqMqNU7m3hRMPXwI0-PSkXqbpzz4um7w1NwagJpFzLWS4Yo5qSiBGRuHfynKi_KPUFOC_0cC_qP-7riv2UmC2olB1-fgR5IHLFg2UyxLlLn2SPcfAsxecrAG0ojQ5UDDhqAFOm4jjupcKNRwy_Cznfj-LqSjULZvw7">
-<h3 class="font-headline-md text-primary mb-1">Uganda Gorilla Safaris</h3>
-<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
-                        Track Gorillas at affordable prices
-                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+<img alt="3-Day Bwindi Gorilla Trekking" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="Deep, lush Ugandan rainforest jungle imagery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8fd2F4xmOI24BBfGAANMmukiMnibElPqPbhijxyRbLiqHipWEjUmO77W-kQBdSguNEKbZJ0c_ZEi2o0BRYbFc-RGwaSddI-TbAwf0U-zgmrXpXLY3QasKVvnljhZZsgXFRQVpfaSYpy-wJNmP5gl4Dqnz3J_R_pxp09LXXh1HOYttSp2n1LLUZ8LcubNSvl9ulogqugPElOP-lfgsXh7VxBH8ytJL69froZvsM6rdODYxVLBXRpnlJoUQ-8zTRyI9W672jwMjz5MV">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">3-Day Bwindi Gorilla Trekking</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center justify-between">
+    Track endangered mountain gorillas in the Impenetrable Forest
+    <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 ml-2">arrow_forward</span>
 </p>
 </div>
+<!-- Card 2 -->
 <div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
-<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A thrilling view of a safari jeep driving through an open, sun-drenched East African plain. Dust kicks up behind the vehicle as it navigates towards a distant herd of zebras. The aesthetic is adventurous and high-quality, capturing the essence of a premium guided safari tour." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqmz3lnlP2Bf3KHutXPgK3OdGsNY3tNyC4fediR9biE2ROrdRcVXGdhWbfn9ejgzkzT_F59c81D57RMWuvqM2ysH78EvanrXWjhfhvWcBOhV8HIyGhFWV9kN9fNWX4xAKlRenW_XTt3wPGTEQYIa0x_d6UYPexgJ5oSxdp75bYtS2cOWFE73L6dYdQDdqo45f2UgGRD0ULzfE-UKCUxeyeAnhZX7AtFxfnTu_yRG3-P1V-aIDK9fylDD7aiyMFp_6P7oBVgQgu2hLM">
-<h3 class="font-headline-md text-primary mb-1">Masai Mara Gorilla Trek</h3>
-<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
-                        Track Gorillas at affordable prices
-                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+<img alt="Murchison Falls Game Drive" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="Spectacular savanna landscapes with elephants or waterfalls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGVIKKXxx26CgF5MNZBK3XU8A-6WqEVnhF21HCy3FBbcDzM6EhwpDRGwu9LZMSlRBoB_AbNjVQpa-yvXZUROlJtMs51jnEe3CcFoLaRKYaWVhqMqNU7m3hRMPXwI0-PSkXqbpzz4um7w1NwagJpFzLWS4Yo5qSiBGRuHfynKi_KPUFOC_0cC_qP-7riv2UmC2olB1-fgR5IHLFg2UyxLlLn2SPcfAsxecrAG0ojQ5UDDhqAFOm4jjupcKNRwy_Cznfj-LqSjULZvw7">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">Murchison Falls Game Drive</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center justify-between">
+    Explore Uganda's largest park and witness the explosive Nile falls
+    <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 ml-2">arrow_forward</span>
 </p>
 </div>
+<!-- Card 3 -->
 <div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
-<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A close-up, high-definition portrait of a lion resting in tall, dry grass. The lighting highlights the texture of its mane and the intensity of its gaze. The image conveys a sense of wild luxury and close-encounter wildlife experiences typical of high-end safari packages." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmrIs8qN_NNwsAegP_ZkBaHovMqWaLZUhfQJrEoUEL1PEhCD-pKRulpZerWCBATlHKyaJgfI0nuDmrHP3G2GXvW9jBAW4zhM21twk9cOaJbJVgtuSPaUICx4jg5dJ2ERi08IU3xAJdRG12F9OXlhC_ZYfP0ycDvfNGslDWMZJIYeU6KZq4CYPmvNYlTvRdMpWhZbBvvD8r3bUl7S0CnQYd-NkcgQrlPhPyi7RYkv4TRLIIB0G3heit_4VeO5-dddeTEf-5EAtElM3k">
-<h3 class="font-headline-md text-primary mb-1">Gorilla Trek and Beach</h3>
-<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
-                        Track Gorillas at affordable prices
-                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+<img alt="Jinja White Water Rafting" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="White water rafting action shots." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmrIs8qN_NNwsAegP_ZkBaHovMqWaLZUhfQJrEoUEL1PEhCD-pKRulpZerWCBATlHKyaJgfI0nuDmrHP3G2GXvW9jBAW4zhM21twk9cOaJbJVgtuSPaUICx4jg5dJ2ERi08IU3xAJdRG12F9OXlhC_ZYfP0ycDvfNGslDWMZJIYeU6KZq4CYPmvNYlTvRdMpWhZbBvvD8r3bUl7S0CnQYd-NkcgQrlPhPyi7RYkv4TRLIIB0G3heit_4VeO5-dddeTEf-5EAtElM3k">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">Jinja White Water Rafting</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center justify-between">
+    High-octane adventure sports at the historic Source of the Nile
+    <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 ml-2">arrow_forward</span>
 </p>
 </div>
+<!-- Card 4 -->
+<div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
+<img alt="Lake Mburo Wildlife Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="Close-up wildlife imagery of zebras." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqmz3lnlP2Bf3KHutXPgK3OdGsNY3tNyC4fediR9biE2ROrdRcVXGdhWbfn9ejgzkzT_F59c81D57RMWuvqM2ysH78EvanrXWjhfhvWcBOhV8HIyGhFWV9kN9fNWX4xAKlRenW_XTt3wPGTEQYIa0x_d6UYPexgJ5oSxdp75bYtS2cOWFE73L6dYdQDdqo45f2UgGRD0ULzfE-UKCUxeyeAnhZX7AtFxfnTu_yRG3-P1V-aIDK9fylDD7aiyMFp_6P7oBVgQgu2hLM">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">Lake Mburo Wildlife Safari</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center justify-between">
+    See spectacular zebras, impalas, and hippos on a guided day trip
+    <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 ml-2">arrow_forward</span>
+</p>
+</div>
+<!-- Card 5 -->
+<div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer">
+<img alt="Kampala Cultural City Tour" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="Premium, clean city sightseeing architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMCvAptZqvcMKEz2SWZ1MqEJ2b086aCuaKpnJiuedH6-8y2vxzMBv380aSxpmV90HVy3hQRK1u3gE-lYjqmHqxnXFk4RIbtvl4bqStcP26n6chAJn-ojl1PZDbmltpdKBw2zoU-jWwrchl7Kh1yz8cwYCZHQNZT40wE7tDwiiiXRaoGcfi_qxdJyiK1pL37YQ8RCtQDbv73Q4nRpRVwxWDH4IjIHVnSXzapfvCMzv38WHy239NeEoKzx5fJy4dbu-ALhGfjrRjhj4">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">Kampala Cultural City Tour</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center justify-between">
+    Explore the historic markets, monuments, and vibrant capital life
+    <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 ml-2">arrow_forward</span>
+</p>
+</div>
+<!-- Card 6 -->
 <div class="snap-start flex-none w-[75vw] md:w-auto bg-surface-container-lowest p-4 rounded-3xl shadow-sm border border-outline-variant/5 group cursor-pointer pr-margin-mobile md:pr-4">
-<img alt="Safari" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="A serene landscape showing a lush, misty mountainous region in East Africa, typical of gorilla trekking habitats. Dense green vegetation covers the steep slopes under a soft, overcast sky. The atmosphere is mysterious and inviting, appealing to adventurous nature lovers seeking premium travel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8fd2F4xmOI24BBfGAANMmukiMnibElPqPbhijxyRbLiqHipWEjUmO77W-kQBdSguNEKbZJ0c_ZEi2o0BRYbFc-RGwaSddI-TbAwf0U-zgmrXpXLY3QasKVvnljhZZsgXFRQVpfaSYpy-wJNmP5gl4Dqnz3J_R_pxp09LXXh1HOYttSp2n1LLUZ8LcubNSvl9ulogqugPElOP-lfgsXh7VxBH8ytJL69froZvsM6rdODYxVLBXRpnlJoUQ-8zTRyI9W672jwMjz5MV">
-<h3 class="font-headline-md text-primary mb-1">Uganda Gorilla Safaris</h3>
-<p class="font-label-sm text-on-surface-variant flex items-center justify-between">
-                        Track Gorillas at affordable prices
-                        <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">arrow_forward</span>
+<img alt="Chimpanzee Tracking Budongo" class="w-full h-[180px] object-cover rounded-2xl mb-4 group-hover:opacity-90 transition-opacity" data-alt="Crisp close-up chimpanzee photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8fd2F4xmOI24BBfGAANMmukiMnibElPqPbhijxyRbLiqHipWEjUmO77W-kQBdSguNEKbZJ0c_ZEi2o0BRYbFc-RGwaSddI-TbAwf0U-zgmrXpXLY3QasKVvnljhZZsgXFRQVpfaSYpy-wJNmP5gl4Dqnz3J_R_pxp09LXXh1HOYttSp2n1LLUZ8LcubNSvl9ulogqugPElOP-lfgsXh7VxBH8ytJL69froZvsM6rdODYxVLBXRpnlJoUQ-8zTRyI9W672jwMjz5MV">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">Chimpanzee Tracking Budongo</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center justify-between">
+    Primate tracking expeditions under the guidance of expert local rangers
+    <span class="material-symbols-outlined text-primary bg-surface-container p-1 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 ml-2">arrow_forward</span>
 </p>
 </div>
 </div>
@@ -539,7 +573,7 @@
 <!-- 7. RENT A CAR -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-mobile md:mb-section-gap">
 <div class="text-center mb-12">
-<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Rent A Car In Uganda</h2>
+<h2 class="text-[32px] md:text-[48px] font-extrabold tracking-tight text-primary mb-2">Rent A Car In Uganda</h2>
 <p class="font-body-md text-on-surface-variant">Uganda's Leading Car Rental Service</p>
 </div>
 <div class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
@@ -550,31 +584,31 @@
 <div class="w-full h-full bg-surface-container rounded-xl flex items-center justify-center overflow-hidden">
 <img alt="Toyota LandCruiser" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A sleek, modern, rugged SUV (like a Toyota LandCruiser) isolated against a clean, bright white background. The vehicle is styled for off-road luxury safaris, appearing pristine and reliable. The lighting is studio-quality, highlighting the car's robust design and premium appeal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuEn2JDlkQvxU9z3tE6OZmxspnWpc3IWn1cuKPIy7LDDyjDmIoHsbFAIuW5O7W2vURK_RJpypgFFiuo6uI1zcPoegW5EaTf9wySg-5IocVnCFWprDaVojCUTN9jIVsraiJyG4mBW3KxdhXT-32jtsNJo2g-ko3RIPfcvVFZTorQzE_dzc6ScJwPSF3lpA--A-Q6mJLPrWwynptD_SMuOx6LJOMNSFpAmydClsGLNmZBkAYjelLNR5QpsF589W8uKNeoJrzghYRtqVI">
 </div>
-<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-label-sm text-on-surface-variant font-bold shadow-sm">
+<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-[14px] font-medium text-[#444748] shadow-sm">
                         with driver
                     </div>
 </div>
-<h3 class="font-headline-lg text-primary mb-1">Toyota LandCruiser</h3>
-<p class="font-label-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">Toyota LandCruiser</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center gap-1 mb-6">
 <span class="material-symbols-outlined text-[16px]">location_on</span> Kampala, Uganda
                 </p>
 <div class="grid grid-cols-2 gap-4 mb-8">
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">speed</span> 25,100 miles
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">settings</span> Automatic
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">local_gas_station</span> Diesel
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">airline_seat_recline_normal</span> 7 seats
                     </div>
 </div>
 <div class="flex justify-between items-center mt-auto border-t border-outline-variant/20 pt-6">
-<span class="font-headline-md text-primary font-bold">UGX.120,000</span>
-<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
+<span class="text-[14px] font-medium text-[#444748]">UGX.120,000 / day</span>
+<button class="text-[14px] bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
 </div>
 </div>
 <!-- Car Card 2 -->
@@ -583,31 +617,31 @@
 <div class="w-full h-full bg-surface-container rounded-xl flex items-center justify-center overflow-hidden">
 <img alt="Toyota Rav4" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A compact, stylish SUV (like a Toyota Rav4) presented against a stark white studio background. The vehicle looks polished, versatile, and ready for both city tours and light off-road travel. High-key lighting emphasizes its clean lines and modern, premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_VUYmkjORR4RMiOv47EKZIkO3HLE5PnID9pEYMME4tA82T_Es0rIz_0V3RE4J3324wu9w9gjZBMUk2SDtitEq4HLYbQgJAV0TMEErmAwHBmDQZnnWfHp6JUoT6eSMD8xKu6OS74NNBa2rErid9zjKqe-Kk-u2_z3bgj_RAaigBuP6rCVDuI-Ct1PPVr9mG5YATyO0X5Gz5VdiClzclazb45XYnHKNKO1PpMpHwNfeSqB3XLUO76mjkopjlAy1ma-nupTxqI7Twd7">
 </div>
-<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-label-sm text-on-surface-variant font-bold shadow-sm">
+<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-[14px] font-medium text-[#444748] shadow-sm">
                         with driver
                     </div>
 </div>
-<h3 class="font-headline-lg text-primary mb-1">Toyota Rav4</h3>
-<p class="font-label-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">Toyota Rav4</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center gap-1 mb-6">
 <span class="material-symbols-outlined text-[16px]">location_on</span> Kampala, Uganda
                 </p>
 <div class="grid grid-cols-2 gap-4 mb-8">
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">speed</span> 25,100 miles
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">settings</span> Automatic
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">local_gas_station</span> Diesel
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">airline_seat_recline_normal</span> 5 seats
                     </div>
 </div>
 <div class="flex justify-between items-center mt-auto border-t border-outline-variant/20 pt-6">
-<span class="font-headline-md text-primary font-bold">UGX.120,000</span>
-<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
+<span class="text-[14px] font-medium text-[#444748]">UGX.120,000 / day</span>
+<button class="text-[14px] bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
 </div>
 </div>
 <!-- Car Card 3 -->
@@ -616,31 +650,31 @@
 <div class="w-full h-full bg-surface-container rounded-xl flex items-center justify-center overflow-hidden">
 <img alt="4X4 Tour Vehicle" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A heavy-duty, custom-built 4x4 safari tour vehicle with an extended body, isolated on a pure white background. The vehicle features large windows and a pop-up roof designed for wildlife viewing. The presentation is clean, professional, and indicative of a reliable, high-end travel service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE4U9nFjjVPgizPu9_wkLVY67HZg81L_l7CC3O9MEViuF9YIbTnLHTN7QBJ2tPGN3UQNQFDHzLJTgM0Imtw48AA8iY8oe5-qOrTSiQoJquMjjQhUSP9hX-EOU7X2p2GpXcZm1_D36gXRlta6RNtXuYQpXlVVbEgGiqWjHdShFZsmDME1vHqXyy_BQpyjf1jgluNg9ery_2VA_RwYhzImjaUdiOHB5HTKzmeFnUw7bbcHi4L88xqWnsVfV8m3uhhN5tbyXWfWGxLe7u">
 </div>
-<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-label-sm text-on-surface-variant font-bold shadow-sm">
+<div class="absolute -bottom-4 right-4 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/20 text-[14px] font-medium text-[#444748] shadow-sm">
                         with driver
                     </div>
 </div>
-<h3 class="font-headline-lg text-primary mb-1">4X4 Tour Vehicle</h3>
-<p class="font-label-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<h3 class="text-[18px] font-bold text-[#1a1c1c] tracking-tight mb-1">4X4 Tour Vehicle</h3>
+<p class="text-[14px] font-medium text-[#444748] flex items-center gap-1 mb-6">
 <span class="material-symbols-outlined text-[16px]">location_on</span> Kampala, Uganda
                 </p>
 <div class="grid grid-cols-2 gap-4 mb-8">
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">speed</span> 25,100 miles
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">settings</span> Automatic
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">local_gas_station</span> Diesel
                     </div>
-<div class="flex items-center gap-2 font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-[14px] font-medium text-[#444748]">
 <span class="material-symbols-outlined text-[18px]">airline_seat_recline_normal</span> 7 seats
                     </div>
 </div>
 <div class="flex justify-between items-center mt-auto border-t border-outline-variant/20 pt-6">
-<span class="font-headline-md text-primary font-bold">UGX.120,000</span>
-<button class="font-label-sm bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
+<span class="text-[14px] font-medium text-[#444748]">UGX.120,000 / day</span>
+<button class="text-[14px] bg-surface-container hover:bg-surface-container-high text-primary px-6 py-2 rounded-full transition-colors font-bold">Book Now</button>
 </div>
 </div>
 </div>
@@ -655,7 +689,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
 <div>
-<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Eyalama Destinations</h2>
+<h2 class="text-[32px] md:text-[48px] font-extrabold tracking-tight text-primary mb-2">Eyalama Destinations</h2>
 <p class="font-body-md text-on-surface-variant">Travel Across East Africa With Eyalama</p>
 </div>
 <button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-lg flex items-center gap-2 hover:opacity-90 transition-opacity self-start md:self-end">
@@ -667,48 +701,48 @@
 <div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
 <img alt="Uganda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A breathtaking landscape of Uganda, featuring a serene crater lake surrounded by lush, vibrant green rolling hills. The sky is partially cloudy, casting dynamic shadows over the dramatic terrain. The scene captures the raw, untouched beauty and premium nature exploration aesthetic of the 'Pearl of Africa'." data-location="Uganda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzEqkLJka4YlAhdx8i6PQKK59LhC7qzUUMBNwC8GnSoAq-OFyYFqAvZEiPSDhScoDB2FY7QV45cv7QakfLAcNKBEOzGkL8rGtnpNMOtErFCC9ioDB7aoCig4AEyz9LCQ4XeyPOl6v7W8pO3osqCB95-ZVHSsi5Bk5ZuyMorPOFp5gFpArDOPQUz5Z2NN8ybVkyQwsmnEvwOBEPq1QPhwfHEh-zuFREMTX7tZqx2pA379FCtHLzREI225QqteIhRdN_m74d2BBsXyw6">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
 <div>
-<h3 class="font-headline-md text-primary">Uganda</h3>
-<p class="font-label-sm text-on-surface-variant">Explore The Pearl</p>
+<h3 class="text-[20px] font-extrabold tracking-wide text-white drop-shadow-md">Uganda</h3>
+<p class="text-[13px] font-normal text-gray-200">Explore The Pearl</p>
 </div>
-<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+<span class="material-symbols-outlined text-white bg-white/20 backdrop-blur-sm p-2 rounded-full border border-white/20 hover:bg-white/30 transition-colors">arrow_forward</span>
 </div>
 </div>
 <!-- Dest 2 -->
 <div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
 <img alt="Kenya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An iconic wide-angle shot of the Kenyan savanna during the Great Migration. Countless wildebeest dot the vast golden plains under a dramatic, expansive sky. In the distance, flat-topped acacia trees silhouette against the horizon. The image conveys an epic, high-end safari adventure." data-location="Kenya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPZgL6U9u5sdFUrZJf4dLcmPJc60rRsqUIpjjdoqqsh_B_iaO0qWUcZfn2vmfRNkGTY_2Ygah_NSnZZ8Avh-uhGHL2Dg1spz1vSfHB2yso1toJTrzpyspeLFDp4iCaaxE9floGNBbINVkJjA2IQkUblie3LlvEwBcuZuM3NzcATpqBjU2Nc3H4KP6ghyZFKDrpS6QcTwa9qGqqP2p-UjwHmmRxTC6OgRmdzylZuNUPODTpfSDPv8sQcZsklelyuQBwylZV4dhSD1aM">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
 <div>
-<h3 class="font-headline-md text-primary">Kenya</h3>
-<p class="font-label-sm text-on-surface-variant">Discover Kenya</p>
+<h3 class="text-[20px] font-extrabold tracking-wide text-white drop-shadow-md">Kenya</h3>
+<p class="text-[13px] font-normal text-gray-200">Discover Kenya</p>
 </div>
-<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+<span class="material-symbols-outlined text-white bg-white/20 backdrop-blur-sm p-2 rounded-full border border-white/20 hover:bg-white/30 transition-colors">arrow_forward</span>
 </div>
 </div>
 <!-- Dest 3 -->
 <div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
 <img alt="Tanzania" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A majestic view of Mount Kilimanjaro rising above the clouds in Tanzania. The snow-capped peak is illuminated by early morning light, contrasting with the dark, forested foothills. The composition is awe-inspiring and aspirational, perfectly suited for a luxury travel destination showcase." data-location="Tanzania" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqRhJ62jRV-EtWnbMokcl5VnSlM8zxQceWjrkRB_kZGzpQ76RzXjtlzhOu-nCfW1TfjjxpEV8IJGuzz3mEFKQYemo9UY7QgmW8lKsAo93gez-kVSE1YWJUpvni93LtUtGsNvn-Q9AVvaueuC_yCfZ_9lbT2huzeZC0U4UiN4HXTwDp9ixnZfBDCA2F-uL2FP29jj8CfPvBLnXzwYHwpBn-8d6-zCdJnqfG122L6Pk4pQsm4XhRA3yHI2xoiX-HgP7CHibBi4uWtsZ3">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
 <div>
-<h3 class="font-headline-md text-primary">Tanzania</h3>
-<p class="font-label-sm text-on-surface-variant">Discover Tanzania</p>
+<h3 class="text-[20px] font-extrabold tracking-wide text-white drop-shadow-md">Tanzania</h3>
+<p class="text-[13px] font-normal text-gray-200">Discover Tanzania</p>
 </div>
-<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+<span class="material-symbols-outlined text-white bg-white/20 backdrop-blur-sm p-2 rounded-full border border-white/20 hover:bg-white/30 transition-colors">arrow_forward</span>
 </div>
 </div>
 <!-- Dest 4 -->
 <div class="relative h-[400px] rounded-[32px] overflow-hidden group cursor-pointer shadow-sm">
 <img alt="Rwanda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A tranquil, misty morning view of the Volcanoes National Park in Rwanda. Layered mountain ridges fade into the distance, covered in thick rainforest vegetation. The moody, atmospheric lighting creates a sense of luxury eco-tourism and exclusive wilderness exploration." data-location="Rwanda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1PClgfRROfBLT1s3wwkhIwdl-qKZCy3kj5cOwprrRuh6yxkZ6a0IBIG-UzhmMGJAHbYpzUyan2oO0n_eacX6imSWLJtoBhSHmczTsblkSujnLQ9jWb6pJyoOttZMFjnwAm6X3Sv0GJ58JCUGN6kr-Qe1b65uEqiBPV-Iob7bCTfrz70bbKSTC1qf4Wi4ZSWN64FyQBjkVQB0TioLCkQ0wNnWffq22ay3_dt1SlcSPQBh8nxnSVfT8AMbvIjVD93aBHR_w7H9Be8-o">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest p-4 rounded-2xl flex justify-between items-center shadow-lg border border-outline-variant/10">
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
 <div>
-<h3 class="font-headline-md text-primary">Rwanda</h3>
-<p class="font-label-sm text-on-surface-variant">Discover Rwanda</p>
+<h3 class="text-[20px] font-extrabold tracking-wide text-white drop-shadow-md">Rwanda</h3>
+<p class="text-[13px] font-normal text-gray-200">Discover Rwanda</p>
 </div>
-<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-full">arrow_forward</span>
+<span class="material-symbols-outlined text-white bg-white/20 backdrop-blur-sm p-2 rounded-full border border-white/20 hover:bg-white/30 transition-colors">arrow_forward</span>
 </div>
 </div>
 </div>
@@ -734,10 +768,11 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-container-max mx-auto mb-16">
 <!-- Brand & Contact -->
 <div class="md:col-span-1">
-<div class="font-headline-md text-headline-md text-on-tertiary mb-6 flex items-center gap-4">
-<span class="material-symbols-outlined text-[32px] text-secondary-container">diamond</span>
-                     Eyalama Adventures
-                </div>
+<!-- Footer Brand Block -->
+<div class="mb-6 flex flex-col gap-3">
+<img alt="Eyalama Adventures logo badge" class="h-20 w-auto object-contain self-start" src="assets/eyalama_logo.png">
+<span class="font-headline-md text-[20px] font-extrabold tracking-tight" style="font-family: 'Manrope', sans-serif; color: #fed65b;">Eyalama Adventures</span>
+</div>
 <div class="space-y-4 font-body-md opacity-90 text-on-tertiary-container">
 <p class="flex items-start gap-2">
 <span class="material-symbols-outlined text-[20px] mt-1">location_on</span>
@@ -822,15 +857,16 @@
             drawer.classList.add('translate-x-full');
         });
 
-        // TopNav scroll effect
+        // TopNav liquid-glass scroll effect
         const topNav = document.getElementById('top-nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                topNav.classList.add('bg-surface-container-lowest/90', 'shadow-sm');
-                topNav.classList.remove('bg-transparent', 'text-on-primary');
+            if (window.scrollY > 60) {
+                // Frosted liquid-glass: heavy blur + ultra-light white tint + soft ring
+                topNav.classList.add('bg-white/10', 'shadow-[0_4px_24px_rgba(0,0,0,0.08)]', 'border-white/20');
+                topNav.classList.remove('bg-transparent', 'border-white/10');
             } else {
-                topNav.classList.remove('bg-surface-container-lowest/90', 'shadow-sm');
-                topNav.classList.add('bg-transparent');
+                topNav.classList.remove('bg-white/10', 'shadow-[0_4px_24px_rgba(0,0,0,0.08)]', 'border-white/20');
+                topNav.classList.add('bg-transparent', 'border-white/10');
             }
         });
     </script>
