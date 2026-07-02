@@ -850,5 +850,46 @@
                 topNav.classList.add('bg-transparent', 'border-white/10');
             }
         });
+
+        // Custom anchor scrolling with a slightly slower timing
+        const smoothScrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+        const scrollDuration = 700; // duration in ms; larger = slower
+
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+
+        function scrollToTarget(targetY) {
+            const startY = window.scrollY;
+            const distance = targetY - startY;
+            let startTime = null;
+
+            function animate(timestamp) {
+                if (startTime === null) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / scrollDuration, 1);
+                const eased = easeInOutQuad(progress);
+                window.scrollTo(0, startY + distance * eased);
+                if (elapsed < scrollDuration) {
+                    window.requestAnimationFrame(animate);
+                }
+            }
+
+            window.requestAnimationFrame(animate);
+        }
+
+        smoothScrollLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                const href = link.getAttribute('href');
+                const targetId = href && href.startsWith('#') ? href.slice(1) : null;
+                if (!targetId) return;
+                const targetElement = document.getElementById(targetId);
+                if (!targetElement) return;
+                event.preventDefault();
+                const targetTop = targetElement.getBoundingClientRect().top + window.scrollY;
+                scrollToTarget(targetTop);
+                history.pushState(null, '', href);
+            });
+        });
     </script>
 </body></html>
