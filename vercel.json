@@ -1,13 +1,16 @@
 {
-  "version": 3,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*\\..*)",
-      "dest": "/Frontend/$1"
+      "source": "/assets/(.*)",
+      "destination": "/Frontend/assets/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/Frontend/index.html"
+      "source": "/(.*\\..*)",
+      "destination": "/Frontend/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/Frontend/index.html"
     }
   ]
 }
