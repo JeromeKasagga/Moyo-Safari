@@ -111,7 +111,7 @@
             scrollbar-width: none;
         }
         /* Smooth single-page scrolling */
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth !important; }
     </style>
 <style data-stitch-css-vh="
     body {
@@ -162,17 +162,17 @@
 <div class="relative flex items-center px-4 md:px-gutter py-3 max-w-container-max mx-auto">
 
   <!-- LEFT: Logo Badge (always visible) -->
-  <a class="flex items-center flex-shrink-0 z-10" href="#" aria-label="Moyo Safaris Home">
+  <a class="flex items-center flex-shrink-0 z-10" href="#hero" aria-label="Moyo Safaris Home">
     <img alt="Moyo Safaris logo badge" class="h-11 w-auto object-contain" src="assets/moyo_logo.jpeg">
   </a>
 
   <!-- CENTER: Desktop pill nav — absolutely centered, hidden on mobile -->
   <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10 items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-lg px-3 py-2 rounded-full border border-outline-variant/30 shadow-sm">
-    <a class="bg-[#1a1c1c] text-white rounded-full px-6 py-2.5 font-label-lg transition-all duration-200 whitespace-nowrap" href="#">Home</a>
-    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Packages</a>
-    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Safari</a>
-    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Destinations</a>
-    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#">Rentals</a>
+    <a class="bg-[#1a1c1c] text-white rounded-full px-6 py-2.5 font-label-lg transition-all duration-200 whitespace-nowrap" href="#hero">Home</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#packages">Packages</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#safari-tours">Safari</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#destinations">Destinations</a>
+    <a class="text-on-surface-variant font-label-lg hover:bg-[#f3f3f3] hover:text-[#1a1c1c] rounded-full px-6 py-2.5 transition-all duration-200 whitespace-nowrap" href="#rentals">Rentals</a>
   </nav>
 
   <!-- RIGHT: Hamburger on mobile / Contact Us on desktop -->
