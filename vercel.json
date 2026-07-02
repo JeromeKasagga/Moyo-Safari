@@ -1,9 +1,13 @@
 {
-  "public": "Frontend",
-  "rewrites": [
+  "version": 3,
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*\\..*)",
+      "dest": "/Frontend/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Frontend/index.html"
     }
   ]
 }
